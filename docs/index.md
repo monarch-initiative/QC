@@ -5,7 +5,7 @@ Community facing documentation about quality control (QC) for the entire Monarch
 
 #### Dipper: data ingestion/ETL pipeline (pre-QC)
 
-Dipper ingests data from [many different remote source](https://beta.monarchinitiative.org/about/data-sources).
+Dipper ingests data from [many different remote sources](https://beta.monarchinitiative.org/about/data-sources).
 
 Ingestion of data from remote sources into the Monarch stack is configured as a
 [Jenkins pipeline](https://ci.monarchinitiative.org/blue/organizations/jenkins/dipper-pipeline/activity/)
