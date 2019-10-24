@@ -26,7 +26,7 @@ When hundreds of million statements are successfully produced questions abound: 
 How do they compare with previous releases? What is new? What went away? What caused these changes?
 Does the output conform to the intended model?
 
-To confirm that data is fit for purpose, the Monarch team periodically performs an extensive QC
+To confirm that data are fit for purpose, the Monarch team periodically performs an extensive QC
 process on the data output by Dipper. 
 
 This process includes the following steps:
