@@ -1,8 +1,3 @@
-## Monarch Initiative Quality Control (QC)
-
-### Purpose 
-Community facing documentation about quality control for the entire monarch corpus.
-
 ### Monarch components
 
 [Dipper (Data Integration Pipeline)](pages/dipper) 
