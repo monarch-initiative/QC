@@ -22,7 +22,7 @@ A critical aspect of data ingest is confirming the data ingested are fit for pur
 heterogeneous sources updating their data, their data formats, their data servers, their data 
 licenses, keeping the ingestion running is a Sisyphean endeavor. 
 
-When hundreds of million statements are successfully produced questions abound: what they contain?
+When hundreds of million statements are successfully produced, questions abound: What do they contain?
 How do they compare with previous releases? What is new? What went away? What caused these changes?
 Does the output conform to the intended model?
 
