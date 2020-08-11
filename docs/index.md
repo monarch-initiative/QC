@@ -46,5 +46,5 @@ occur approximately once every few months. These data releases include:
 
 
 ### Contact
-For questions, please contact [monarchinitiative@gmail.com](mailto:monarchinitiative@gmail.com).
+For questions, please contact [monarchinitiative@gmail.com](mailto:info@monarchinitiative.org).
 
