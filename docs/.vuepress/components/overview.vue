@@ -8,7 +8,7 @@
   export default {
     data() {
       return {
-        msg: 'Hello this is <demo-component>'
+        msg: 'The overview component will go here'
       }
     }
   }

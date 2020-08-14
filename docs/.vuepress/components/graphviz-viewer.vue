@@ -6,9 +6,9 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
-        msg: 'Hello this is <Foo-Bar>'
+        msg: 'The graphviz component will go here'
       }
     }
   }

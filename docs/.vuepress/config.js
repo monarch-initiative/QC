@@ -21,7 +21,7 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
 
-  base: '/QC/',  // https://vuepress.vuejs.org/guide/deploy.html#github-pages
+  base: '/',  // https://vuepress.vuejs.org/guide/deploy.html#github-pages
 
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
@@ -30,44 +30,77 @@ module.exports = {
    */
   themeConfig: {
     repo: '',
-    logo: '/assets/img/monarch-logo-white.svg',
+    logo: '/img/monarch-logo-white.svg',
     editLinks: false,
     docsDir: '',
     editLinkText: '',
     lastUpdated: false,
     nav: [
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: 'Dipper',
+        link: '/dipper/',
       },
       {
-        text: 'Config',
-        link: '/config/'
+        text: 'SciGraph',
+        link: '/scigraph/'
       },
       {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        text: 'Solr',
+        link: '/solr/'
+      },
+      {
+        text: 'Rules',
+        link: '/rules/'
+      },
+      {
+        text: 'Ontology',
+        link: '/ontology/'
+      },
+      {
+        text: 'Biolink Model',
+        link: '/biolink/'
+      },
+      {
+        text: 'About',
+        link: '/about/'
       }
     ],
     sidebar: {
-      '/guide/': [
+      '/dipper/': [
         {
-          title: 'Guide',
+          title: 'Dipper',
           collapsable: false,
           children: [
-            '',
-            'using-vue',
+            ['', 'Introduction'],
+            'namespace-network',
+            'namespace-table'
           ]
         }
       ],
+      '/biolink/': [
+        {
+          title: 'Biolink Model',
+          collapsable: false,
+          children: [
+            ['', 'Introduction'],
+            'schema'
+          ]
+        }
+      ]
     }
   },
 
   /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   * Apply plugins，ref：https://vuepress.vuejs.org/plugin
    */
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
-  ]
+  ],
+  markdown: {
+    lineNumbers: true,
+    extendMarkdown: md => {
+      md.use(require('markdown-it-include'), 'docs/.vuepress/public/md/');
+    }
+  }
 };
