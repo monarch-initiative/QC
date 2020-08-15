@@ -10,7 +10,7 @@ pageClass: namespace-table
 <style lang="css">
 
   .namespace-table .theme-default-content {
-    max-width: 100%;
+    max-width: 100% !important;
     margin: 0;
   }
 

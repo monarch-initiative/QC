@@ -4,12 +4,14 @@ pageClass: biolink-schema
 
 ### Biolink Schemas
 
-<biolink></biolink>
+<ClientOnly>
+  <GraphvizViewer :directory="'biolink'" ></GraphvizViewer>
+</ClientOnly>
 
 <style lang="css">
 
   .biolink-schema .theme-default-content {
-    max-width: 100%;
+    max-width: 100% !important;
     margin: 0;
   }
   

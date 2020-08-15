@@ -3,13 +3,16 @@ pageClass: namespace-network
 ---
 #### Namespace network
 
-<graphviz-viewer></graphviz-viewer>
+<ClientOnly>
 
+  <GraphvizViewer :directory="'ns-change'"></GraphvizViewer>
+
+</ClientOnly>
 
 <style lang="css">
 
   .namespace-network .theme-default-content {
-    max-width: 100%;
+    max-width: 100% !important;
     margin: 0;
   }
   
