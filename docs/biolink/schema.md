@@ -4,9 +4,8 @@ pageClass: biolink-schema
 
 ### Biolink Schemas
 
-<ClientOnly>
-  <GraphvizViewer :directory="'biolink'" ></GraphvizViewer>
-</ClientOnly>
+<GraphvizViewer :directory="'biolink'" ></GraphvizViewer>
+
 
 <style lang="css">
 

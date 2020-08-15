@@ -72,8 +72,10 @@ module.exports = {
           collapsable: false,
           children: [
             ['', 'Introduction'],
-            'namespace-network',
-            'namespace-table'
+            'namespace-table',
+            'namespace-change',
+            'namespace-reduced',
+            'namespace-release'
           ]
         }
       ],
