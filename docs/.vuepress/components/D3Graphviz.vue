@@ -122,7 +122,6 @@
           .transition(transition)
           .engine(layout)
           .renderDot(graphvizData);
-
       }
     }
   }
