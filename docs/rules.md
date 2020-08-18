@@ -1,1 +1,1 @@
-### Monarch rules
+!!!include(monarch-rules.md)!!!

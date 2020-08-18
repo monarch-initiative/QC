@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <div class="chart-title">Phenotype Associations</div>
+    <div class="chart-title">Phenotype Associations By Source (Solr)</div>
 
     <b-form-group>
       <b-form-radio-group
@@ -39,7 +39,7 @@
 
     <div id="phenotype-heatmap" class="chart"></div>
 
-    <div class="chart-title">Disease Associations</div>
+    <div class="chart-title">Disease Associations By Source (Solr)</div>
 
     <b-form-group>
       <b-form-radio-group
@@ -77,7 +77,7 @@
 
     <div id="disease-heatmap" class="chart"></div>
 
-    <div class="chart-title">Publication Associations</div>
+    <div class="chart-title">Publication Associations By Source (Solr)</div>
 
     <b-form-group>
       <b-form-radio-group
@@ -115,7 +115,7 @@
 
     <div id="publication-heatmap" class="chart"></div>
 
-    <div class="chart-title">Other Associations</div>
+    <div class="chart-title">Other Associations By Source (Solr)</div>
 
     <b-form-group>
       <b-form-radio-group
@@ -235,6 +235,9 @@
     },
     mounted: async function() {
 
+      // no idea why, but this makes the page load faster
+      await new Promise(r => setTimeout(r, 0));
+
       const solrData = await this.getSolrData();
 
       this.makeHeatMap(solrData, this.phenotypeAssociations, 'phenotype-heatmap');
@@ -314,24 +317,27 @@
 
         const layout = {
           autosize: false,
-          margin: {l:140, r:0, t:80, b:80},
+          margin: {l:155, r:0, t:80, b:80},
           height: 25 * association.length + 160,
-          width: 900,
+          width: 920,
           xaxis: {
              // title: 'Source'
             tickangle: 45,
-            size: 14
+            tickfont: {
+              size: 13.5
+            }
           },
           yaxis: {
             // title: 'Association'
-            size: 14
+            tickfont: {
+              size: 13
+            }
           },
         };
 
         const data = [
           {
             z: counts,
-            //z: [[1, null, 30, 50, 1], [20, 1, 60, 80, 30], [30, 60, 1, -10, 20]],
             x: sources,
             y: association,
             type: 'heatmap',
@@ -344,9 +350,10 @@
         if (selected === 'percent') {
           data[0].zmin = -100;
           data[0].zmax = 100;
+          // https://plotly.com/javascript/colorscales/#custom-colorscale
           data[0].colorscale = [
-            ['0.0', 'rgb(49,54,149)'],
-            ['0.49', 'rgb(69,117,180)'],
+            ['0.0', 'rgb(165,0,38)'],
+            ['0.49', 'rgb(215,48,39)'],
             //['0.49', 'rgb(116,173,209)'],
             //['0.3', 'rgb(171,217,233)'],
             //['0.4', 'rgb(224,243,248)'],
@@ -354,17 +361,17 @@
             //['0.6', 'rgb(254,224,144)'],
             //['0.7', 'rgb(253,174,97)'],
             //['0.51', 'rgb(244,109,67)'],
-            ['0.51', 'rgb(215,48,39)'],
-            ['1.0', 'rgb(165,0,38)']
+            ['0.51', 'rgb(69,117,180)'],
+            ['1.0', 'rgb(49,54,149)']
           ];
         } else {
           data[0].colorscale = [
             ['0', 'rgb(255,255,255)'],
             //['0.2', 'rgb(254,224,144)'],
             //['0.4', 'rgb(253,174,97)'],
-            ['0.333333', 'rgb(244,109,67)'],
-            ['0.666666', 'rgb(215,48,39)'],
-            ['1.0', 'rgb(165,0,38)']
+            ['0.0001', 'rgb(116,173,209)'],
+            ['0.5', 'rgb(69,117,180)'],
+            ['1.0', 'rgb(49,54,149)']
           ];
         }
 
@@ -393,17 +400,26 @@
       },
       async getSolrData(qualifier = 'all') {
         let solrData;
+        const sessionStorage = window.sessionStorage;
         if (qualifier === 'all') {
-          if (this.solrData === null) {
+          if (this.solrData === null && sessionStorage.getItem('solrData') === null) {
             solrData = await this.fetchSolrData('all');
-            this.solrData = solrData
+            this.solrData = solrData;
+            sessionStorage.setItem('solrData', JSON.stringify(solrData));
+          } else if (sessionStorage.getItem('solrData') !== null) {
+            this.solrData = JSON.parse(sessionStorage.getItem('solrData'));
+            solrData = this.solrData;
           } else {
             solrData = this.solrData;
           }
         } else if (qualifier === 'direct') {
-          if (this.solrDataDirect === null) {
+          if (this.solrDataDirect === null && sessionStorage.getItem('solrDataDirect') === null) {
             solrData = await this.fetchSolrData('direct');
             this.solrDataDirect = solrData;
+            sessionStorage.setItem('solrDataDirect', JSON.stringify(solrData));
+          } else if (!sessionStorage.getItem('solrDataDirect') !== null) {
+            this.solrDataDirect = JSON.parse(sessionStorage.getItem('solrDataDirect'));
+            solrData = this.solrDataDirect;
           } else {
             solrData = this.solrDataDirect;
           }
@@ -507,8 +523,7 @@
         } else if (plotDiv.startsWith('other')) {
           this.otherFetched = bool;
         }
-      }
-
+      },
     }
   }
 </script>

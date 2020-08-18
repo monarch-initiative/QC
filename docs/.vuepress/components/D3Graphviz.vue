@@ -2,6 +2,7 @@
   <div>
     <script src="https://unpkg.com/@hpcc-js/wasm/dist/index.min.js" type="javascript/worker"/>
 
+    <div class="file-select">
     <div class="select-dotfile">
       <b-form-select
         v-model="selected"
@@ -15,6 +16,16 @@
         :options="layoutOptions">
       </b-form-select>
 
+
+
+    </div>
+      <div v-show="!graphRendered" class="graph-spinner">
+        <b-spinner
+          class="loading-spinner"
+          type="grow"
+          label="Loading"
+        />
+      </div>
     </div>
 
     <div id="graph">
@@ -53,6 +64,7 @@
       return {
         selected: null,
         layout: null,
+        graphRendered: true,
         layoutOptions: [
           {
             value: null,
@@ -92,6 +104,7 @@
     },
     methods: {
       async renderGraphViz(file, layout) {
+        this.graphRendered = false;
         wasmFolder('/wasm');
         const filePath = '/gv/' + file;
         let graphvizData = null;
@@ -122,6 +135,8 @@
           .transition(transition)
           .engine(layout)
           .renderDot(graphvizData);
+
+        this.graphRendered = true;
       }
     }
   }
@@ -134,6 +149,16 @@
 
   .select-dotfile {
     width:30em;
+    padding-bottom:1em;
+
   }
+  .file-select {
+    width: 100%;
+    display: inline-flex;
+  }
+  .graph-spinner {
+    padding: 1em 0 0 2em;
+  }
+
 
 </style>

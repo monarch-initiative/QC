@@ -1,8 +1,7 @@
-# Monarch QC Vuepress site
+## Monarch QC Vuepress site
 
-> 
 
-## Building the app
+### Building the app
 VuePress requires Node.js >= 8.6:
 
 ```bash

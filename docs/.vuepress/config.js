@@ -45,6 +45,10 @@ module.exports = {
         link: '/scigraph/'
       },
       {
+        text: 'Solr',
+        link: '/solr/'
+      },
+      {
         text: 'Rules',
         link: '/rules/'
       },
