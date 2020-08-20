@@ -1,5 +1,5 @@
-### Solr Queries
-#### Gene Phenotype Associations By Taxa
+## Solr Queries
+### Gene Phenotype Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_phenotype&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_phenotype&facet.field=subject_taxon_label)
@@ -165,7 +165,7 @@
 | NCBITaxon:521007 | 0 (-_1_) |
 
 
-#### Gene Phenotype Associations By Source
+### Gene Phenotype Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_phenotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_phenotype&facet.field=is_defined_by)
@@ -195,7 +195,7 @@
 | Other | 0 (0) |
 
 
-#### Gene Variant Associations By Taxa
+### Gene Variant Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_gene&facet.field=object_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_gene&facet.field=object_taxon_label)
@@ -339,7 +339,7 @@
 | Sindbis virus | 0 (-_1_) |
 
 
-#### Gene Variant Associations By Source
+### Gene Variant Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_gene&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_gene&facet.field=is_defined_by)
@@ -360,7 +360,7 @@
 | Other | 0 (0) |
 
 
-#### Gene Disease Causal Associations By Taxa
+### Gene Disease Causal Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_disease&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_disease&facet.field=subject_taxon_label)
@@ -385,7 +385,7 @@
 | Salmonella enterica subsp. enterica serovar Typhi | 0 (-_1_) |
 
 
-#### Gene Disease Causal Associations By Source
+### Gene Disease Causal Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_disease&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_disease&facet.field=is_defined_by)
@@ -404,7 +404,7 @@
 | Other | 0 (0) |
 
 
-#### Gene Disease Non-causal Associations By Taxa
+### Gene Disease Non-causal Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amarker_disease&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amarker_disease&facet.field=subject_taxon_label)
@@ -528,7 +528,7 @@
 | Salmonella enterica subsp. enterica serovar Typhi | 0 (-_1_) |
 
 
-#### Gene Disease Non-Causal Associations By Source
+### Gene Disease Non-Causal Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amarker_disease&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amarker_disease&facet.field=is_defined_by)
@@ -548,7 +548,7 @@
 | Other | 0 (0) |
 
 
-#### Gene Homology By Subject Taxa
+### Gene Homology By Subject Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_homology&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_homology&facet.field=subject_taxon_label)
@@ -625,7 +625,7 @@
 | Cryptosporidium parvum | 0 (-_10_) |
 
 
-#### Gene Interactions By Source
+### Gene Interactions By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_interaction&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_interaction&facet.field=is_defined_by)
@@ -638,7 +638,7 @@
 | Other | 0 (0) |
 
 
-#### Gene Interactions By Subject Taxa
+### Gene Interactions By Subject Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_interaction&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_interaction&facet.field=subject_taxon_label)
@@ -699,7 +699,7 @@
 | Listeria innocua Clip11262 | 0 (-_3_) |
 
 
-#### Gene Function By Taxa
+### Gene Function By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_function&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_function&facet.field=subject_taxon_label)
@@ -790,7 +790,7 @@
 | Listeria innocua | 0 (-_6_) |
 
 
-#### Gene Anatomy By Taxa
+### Gene Anatomy By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_anatomy&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_anatomy&facet.field=subject_taxon_label)
@@ -851,7 +851,7 @@
 | Sindbis virus | 0 (-_20_) |
 
 
-#### Genotype Phenotype Associations By Taxa
+### Genotype Phenotype Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agenotype_phenotype&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agenotype_phenotype&facet.field=subject_taxon_label)
@@ -874,7 +874,7 @@
 | Other | 0 (0) |
 
 
-#### Genotype Phenotype Associations By Source
+### Genotype Phenotype Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agenotype_phenotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agenotype_phenotype&facet.field=is_defined_by)
@@ -891,7 +891,7 @@
 | Other | 0 (0) |
 
 
-#### Model Disease Associations By Taxa
+### Model Disease Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amodel_disease&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amodel_disease&facet.field=subject_taxon_label)
@@ -921,7 +921,7 @@
 | Mus musculus castaneus | 1 (0) |
 
 
-#### Model Disease Associations By Source
+### Model Disease Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amodel_disease&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amodel_disease&facet.field=is_defined_by)
@@ -938,7 +938,7 @@
 | Other | 0 (0) |
 
 
-#### Disease Phenotype Associations By Taxa
+### Disease Phenotype Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Adisease_phenotype&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Adisease_phenotype&facet.field=subject_taxon_label)
@@ -950,7 +950,7 @@
 | Homo sapiens | 179 (+__8__) |
 
 
-#### Disease Phenotype Associations By Source
+### Disease Phenotype Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Adisease_phenotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Adisease_phenotype&facet.field=is_defined_by)
@@ -964,7 +964,7 @@
 | Other | 0 (0) |
 
 
-#### Variant Genotype Associations By Taxa
+### Variant Genotype Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_genotype&facet.field=object_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_genotype&facet.field=object_taxon_label)
@@ -992,7 +992,7 @@
 | Other | 0 (0) |
 
 
-#### Variant Genotype Associations By Source
+### Variant Genotype Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_genotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_genotype&facet.field=is_defined_by)
@@ -1009,7 +1009,7 @@
 | Other | 0 (0) |
 
 
-#### Variant Phenotype Associations By Taxa
+### Variant Phenotype Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_phenotype&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_phenotype&facet.field=subject_taxon_label)
@@ -1112,7 +1112,7 @@
 | Saccharomyces cerevisiae S288C | 0 (-_23_) |
 
 
-#### Variant Phenotype Associations By Source
+### Variant Phenotype Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_phenotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_phenotype&facet.field=is_defined_by)
@@ -1137,7 +1137,7 @@
 | sgd | 0 (-_23_) |
 
 
-#### Variant Disease Associations By Taxa
+### Variant Disease Associations By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_disease&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_disease&facet.field=subject_taxon_label)
@@ -1151,7 +1151,7 @@
 | Other | 0 (0) |
 
 
-#### Variant Disease Associations By Source
+### Variant Disease Associations By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_disease&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Avariant_disease&facet.field=is_defined_by)
@@ -1171,7 +1171,7 @@
 | orphanet | 0 (-_1_) |
 
 
-#### Publication Variant By Source
+### Publication Variant By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_variant&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_variant&facet.field=is_defined_by)
@@ -1200,7 +1200,7 @@
 | sgd | 0 (-_29_) |
 
 
-#### Publication Gene By Source
+### Publication Gene By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_gene&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_gene&facet.field=is_defined_by)
@@ -1230,7 +1230,7 @@
 | Other | 0 (0) |
 
 
-#### Publication Phenotype By Source
+### Publication Phenotype By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_gene&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_gene&facet.field=is_defined_by)
@@ -1260,7 +1260,7 @@
 | Other | 0 (0) |
 
 
-#### Publication Genotype By Source
+### Publication Genotype By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_genotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_genotype&facet.field=is_defined_by)
@@ -1275,7 +1275,7 @@
 | Other | 0 (0) |
 
 
-#### Publication Disease By Source
+### Publication Disease By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_disease&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_disease&facet.field=is_defined_by)
@@ -1303,7 +1303,7 @@
 | Other | 0 (0) |
 
 
-#### Publication Model By Source
+### Publication Model By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_model&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apublication_model&facet.field=is_defined_by)
@@ -1325,7 +1325,7 @@
 | Other | 0 (0) |
 
 
-#### Case Model By Source
+### Case Model By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amodel_case&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Amodel_case&facet.field=is_defined_by)
@@ -1337,7 +1337,7 @@
 | Other | 0 (0) |
 
 
-#### Case Disease By Source
+### Case Disease By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_disease&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_disease&facet.field=is_defined_by)
@@ -1348,7 +1348,7 @@
 | Other | 0 (0) |
 
 
-#### Case Variant By Source
+### Case Variant By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_variant&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_variant&facet.field=is_defined_by)
@@ -1360,7 +1360,7 @@
 | Other | 0 (0) |
 
 
-#### Case Genotype By Source
+### Case Genotype By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_genotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_genotype&facet.field=is_defined_by)
@@ -1372,7 +1372,7 @@
 | Other | 0 (0) |
 
 
-#### Case Gene By Source
+### Case Gene By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_gene&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_gene&facet.field=is_defined_by)
@@ -1385,7 +1385,7 @@
 | Other | 0 (0) |
 
 
-#### Case Phenotype By Source
+### Case Phenotype By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_phenotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Acase_phenotype&facet.field=is_defined_by)
@@ -1397,7 +1397,7 @@
 | Other | 0 (0) |
 
 
-#### Gene Pathway By Source
+### Gene Pathway By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_pathway&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_pathway&facet.field=is_defined_by)
@@ -1410,7 +1410,7 @@
 | Other | 0 (0) |
 
 
-#### Gene Pathway By Taxa
+### Gene Pathway By Taxa
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_pathway&facet.field=subject_taxon_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Agene_pathway&facet.field=subject_taxon_label)
@@ -1472,7 +1472,7 @@
 | Sindbis virus | 0 (-_1_) |
 
 
-#### Pathway Phenotype By Source
+### Pathway Phenotype By Source
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apathway_phenotype&facet.field=is_defined_by)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&fq=association_type%3Apathway_phenotype&facet.field=is_defined_by)
@@ -1494,7 +1494,7 @@
 | Other | 0 (0) |
 
 
-#### Relations
+### Relations
 [Production Query](https://solr.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&facet.field=relation_label)
 
 [Dev Query](https://solr-dev.monarchinitiative.org/solr/golr/select/?q=%2A%3A%2A&wt=json&rows=0&facet=true&facet.limit=3000&facet.mincount=1&facet.sort=count&indent=on&facet.field=relation_label)

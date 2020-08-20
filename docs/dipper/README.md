@@ -1,4 +1,4 @@
-### Dipper
+### Dipper QC
 
 #### About
 Dipper QC reduces monarch triples into sets of namespace - predicate - namespace triples.

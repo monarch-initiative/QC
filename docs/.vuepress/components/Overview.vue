@@ -269,7 +269,6 @@
         let counts;
         let text = [];
 
-        //scale = 'auto';
         // Get counts from dev
         const devCounts = this.getCountsFromSolr(solrData.solrDev, association);
         const prodCounts = this.getCountsFromSolr(solrData.solrProd, association);
@@ -440,6 +439,7 @@
           'json.nl': 'arrarr',
           'rows': 0,
           'q': '*:*',
+          'facet.field': 'is_defined_by',
           'facet.pivot': 'association_type,is_defined_by',
           'facet.limit': '500'
         };
@@ -448,8 +448,10 @@
         }
         const pivotTables = {
           'solrProd': {},
-          'solrDev': {}
+          'solrDev': {},
         };
+        let devSources;
+        let prodSources;
 
         for (const solr of solrs) {
           const solrResponse = await axios.get(solr, {
@@ -463,25 +465,14 @@
           });
           if (solr.startsWith("https://solr-dev")) {
             pivotTables.solrDev = solrResponse.facet_counts.facet_pivot['association_type,is_defined_by'];
+            devSources = solrResponse.facet_counts.facet_fields.is_defined_by
+              .map(src => this.processSource(src[0]))
           } else {
             pivotTables.solrProd = solrResponse.facet_counts.facet_pivot['association_type,is_defined_by'];
+            prodSources = solrResponse.facet_counts.facet_fields.is_defined_by
+              .map(src => this.processSource(src[0]))
           }
         }
-
-        let devSources = new Set(
-          pivotTables.solrDev.flatMap(pivotTable =>
-            pivotTable.pivot.map(source => this.processSource(source.value))
-          )
-        );
-
-        let prodSources = new Set(
-          pivotTables.solrDev.flatMap(pivotTable =>
-            pivotTable.pivot.map(source => this.processSource(source.value))
-          )
-        );
-
-        devSources = Array.from(devSources).sort();
-        prodSources = Array.from(prodSources).sort();
 
         // In case theres a new source (or source removed)
         const allSources = Array.from(new Set(devSources.concat(prodSources))).sort();

@@ -17,5 +17,9 @@ pageClass: biolink-schema
   .biolink-schema .page {
     padding-left: 10em;
   }
+  
+  .biolink-schema .sidebar {
+    width: 10em !important;
+  }
 
 </style>

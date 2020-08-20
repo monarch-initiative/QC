@@ -16,5 +16,9 @@ pageClass: namespace-release
   .namespace-release .page {
     padding-left: 10em;
   }
+  
+  .namespace-release .sidebar {
+    width: 10em !important;
+  }
 
 </style>

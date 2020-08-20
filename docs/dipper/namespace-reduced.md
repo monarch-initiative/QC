@@ -16,5 +16,9 @@ pageClass: namespace-reduced
   .namespace-reduced .page {
     padding-left: 10em;
   }
+  
+  .namespace-reduced .sidebar {
+    width: 10em !important;
+  }
 
 </style>

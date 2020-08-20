@@ -69,7 +69,7 @@ module.exports = {
       '/dipper/': [
         {
           title: 'Dipper',
-          collapsable: false,
+          collapsable: true,
           children: [
             ['', 'Introduction'],
             'namespace-table',
@@ -82,13 +82,35 @@ module.exports = {
       '/biolink/': [
         {
           title: 'Biolink Model',
-          collapsable: false,
+          collapsable: true,
           children: [
             ['', 'Introduction'],
             'schema'
           ]
         }
-      ]
+      ],
+      '/solr/': [
+        {
+          title: 'Solr',
+          collapsable: true,
+          sidebarDepth: 2,
+          children: [
+            ['', 'About'],
+            ['solr-diff.md', 'Solr Report']
+          ]
+        }
+      ],
+      '/rules/': [
+        {
+          title: 'Rules',
+          collapsable: true,
+          sidebarDepth: 2,
+          children: [
+            ['', 'About'],
+            ['monarch-rules.md', 'Report']
+          ]
+        }
+      ],
     }
   },
 
@@ -103,6 +125,7 @@ module.exports = {
     lineNumbers: true,
     extendMarkdown: md => {
       md.use(require('markdown-it-include'), 'docs/.vuepress/public/md/');
-    }
+    },
+    extractHeaders: [ 'h2', 'h3', 'h4' ]
   }
 };

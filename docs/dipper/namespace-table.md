@@ -22,5 +22,9 @@ pageClass: namespace-table
   .namespace-table .page {
     padding-left: 10em;
   }
+  
+  .namespace-table .sidebar {
+    width: 10em !important;
+  }
 
 </style>

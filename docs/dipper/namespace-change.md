@@ -16,5 +16,9 @@ pageClass: namespace-changes
   .namespace-changes .page {
     padding-left: 10em;
   }
+  
+  .namespace-changes .sidebar {
+    width: 10em !important;
+  }
 
 </style>
