@@ -3,10 +3,10 @@
 ### About
 
 Monarch generates a number of QC and documentation artifacts each release including:
-1. [Solr pivot tables](https://qc.monarchinitiative.org/solr.html) ({source, taxa} x {association, relation}) as markdown
+1. [Solr pivot tables](https://qc.monarchinitiative.org/solr/) ({source, taxa} x {association, relation}) as markdown
 2. [Namespace, relation, namespace graphs](https://qc.monarchinitiative.org/dipper/) as graphviz and markdown tables
 3. [SciGraph category diffs](https://qc.monarchinitiative.org/scigraph.html) as markdown
-4. [Monarch rule violations](https://qc.monarchinitiative.org/rules.html) as markdown
+4. [Monarch rule violations](https://qc.monarchinitiative.org/rules/) as markdown
 5. [Biolink schemas](https://qc.monarchinitiative.org/biolink/schema.html) as graphviz
 
 This vuepress app is built by slurping up these various resources documents

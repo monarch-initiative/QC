@@ -69,7 +69,7 @@ module.exports = {
       '/dipper/': [
         {
           title: 'Dipper',
-          collapsable: true,
+          collapsable: false,
           children: [
             ['', 'Introduction'],
             'namespace-table',
@@ -82,7 +82,7 @@ module.exports = {
       '/biolink/': [
         {
           title: 'Biolink Model',
-          collapsable: true,
+          collapsable: false,
           children: [
             ['', 'Introduction'],
             'schema'
@@ -92,7 +92,7 @@ module.exports = {
       '/solr/': [
         {
           title: 'Solr',
-          collapsable: true,
+          collapsable: false,
           sidebarDepth: 2,
           children: [
             ['', 'About'],
@@ -103,7 +103,7 @@ module.exports = {
       '/rules/': [
         {
           title: 'Rules',
-          collapsable: true,
+          collapsable: false,
           sidebarDepth: 2,
           children: [
             ['', 'About'],
