@@ -1,7 +1,23 @@
 <template>
   <div>
+    <hr>
 
     <div class="chart-title">Phenotype Associations By Source (Solr)</div>
+
+    <div class="scigraph-version">
+      Production build: <a :href="prodVersion" target="_blank">{{prodVersion}}</a>
+      <br>
+      Beta build: <a :href="devVersion" target="_blank">{{devVersion}}</a>
+    </div>
+
+    <div v-show="!versionFetched" class="overview-spinner">
+      <b-spinner
+        class="loading-spinner"
+        type="grow"
+        label="Loading"
+      />
+    </div>
+
 
     <b-form-group>
       <b-form-radio-group
@@ -168,6 +184,8 @@
       return {
         solrData: null,
         solrDataDirect: null,
+        devVersion: null,
+        prodVersion: null,
         phenotypeValue: 'percent',
         diseaseValue: 'percent',
         publicationValue: 'percent',
@@ -189,6 +207,7 @@
         diseasesFetched: false,
         publicationsFetched: false,
         otherFetched: false,
+        versionFetched: false,
         phenotypeAssociations: [
           'case_phenotype',
           'genotype_phenotype',
@@ -238,21 +257,93 @@
       // no idea why, but this makes the page load faster
       await new Promise(r => setTimeout(r, 0));
 
+      let selected = 'percent';
+
+      await this.getSciGraphVersion();
+      this.versionFetched = true;
+
+      if (this.devVersion === this.prodVersion) {
+        selected = 'production';
+        this.phenotypeValue = 'production';
+        this.diseaseValue = 'production';
+        this.publicationValue = 'production';
+        this.otherValue = 'production';
+      }
+
       const solrData = await this.getSolrData();
 
-      this.makeHeatMap(solrData, this.phenotypeAssociations, 'phenotype-heatmap');
+      this.makeHeatMap(solrData, this.phenotypeAssociations, 'phenotype-heatmap', selected);
       this.phenotypesFetched = true;
 
-      this.makeHeatMap(solrData, this.diseaseAssociations, 'disease-heatmap');
+      this.makeHeatMap(solrData, this.diseaseAssociations, 'disease-heatmap', selected);
       this.diseasesFetched = true;
 
-      this.makeHeatMap(solrData, this.publicationAssociations, 'publication-heatmap');
+      this.makeHeatMap(solrData, this.publicationAssociations, 'publication-heatmap', selected);
       this.publicationsFetched = true;
 
-      this.makeHeatMap(solrData, this.otherAssociations, 'other-heatmap');
+      this.makeHeatMap(solrData, this.otherAssociations, 'other-heatmap', selected);
       this.otherFetched = true;
     },
     methods: {
+
+      async getSciGraphVersion() {
+        const sessionStorage = window.sessionStorage;
+
+        if (this.prodVersion === null && sessionStorage.getItem('prodVersion') === null) {
+          const [prodVersion, devVersion] = await this.fetchSciGraphVersion();
+          this.prodVersion = prodVersion;
+          this.devVersion = devVersion;
+          sessionStorage.setItem('devVersion', JSON.stringify(devVersion));
+          sessionStorage.setItem('prodVersion', JSON.stringify(prodVersion));
+        } else if (sessionStorage.getItem('prodVersion') !== null) {
+          this.prodVersion = JSON.parse(sessionStorage.getItem('prodVersion'));
+          this.devVersion = JSON.parse(sessionStorage.getItem('devVersion'));
+        }
+      },
+
+      async fetchSciGraphVersion() {
+        const sciGraphProd = 'https://scigraph-data.monarchinitiative.org/scigraph/dynamic/datasets.json';
+        const sciGraphDev = 'https://scigraph-data-dev.monarchinitiative.org/scigraph/dynamic/datasets.json';
+        let devVersion;
+        let prodVersion;
+
+        for (const scigraph of [sciGraphProd, sciGraphDev]) {
+          const response = await axios.get(scigraph)
+            .then(function (response) {
+              return response.data
+            })
+            .catch(function (error) {
+              //console.log(error);
+            });
+          if (scigraph.startsWith('https://scigraph-data-dev')) {
+            for (const edge of response.edges) {
+              if (edge.pred === 'dcat:Distribution') {
+                if (edge.sub.endsWith('#ncbigene')) {
+                  devVersion = edge.sub
+                    .replace('MonarchArchive:', 'https://archive.monarchinitiative.org/')
+                    .replace('/#ncbigene', '');
+                  break;
+                }
+              }
+            }
+          } else {
+            // need to DRY this off
+            for (const edge of response.edges) {
+              if (edge.pred === 'dcat:Distribution') {
+                if (edge.sub.endsWith('#ncbigene')) {
+                  prodVersion = edge.sub
+                    .replace('MonarchArchive:', 'https://archive.monarchinitiative.org/')
+                    .replace('/#ncbigene', '');
+                  break;
+                }
+              }
+            }
+          }
+        }
+        // Do this so they update at the same time in the html
+        return [prodVersion, devVersion];
+
+      },
 
       async updateSolrData(value, qualifier, associations, plotDiv){
         this.setSpinner(plotDiv, false);
@@ -299,9 +390,11 @@
             associationText.push(
               `Source: ${source}<br>` +
               `Association: ${assoc}<br>` +
-              `Percent change: ${percentCounts[assocIndex][srcIndex].toFixed(2)}%<br>` +
-              `Beta count: ${devCounts[assocIndex][srcIndex]}<br>` +
-              `Production count: ${prodCounts[assocIndex][srcIndex]}<br>`
+              `Percent change: ${percentCounts[assocIndex][srcIndex]
+                .toFixed(2)
+                .toLocaleString()}%<br>` +
+              `Beta count: ${devCounts[assocIndex][srcIndex].toLocaleString()}<br>` +
+              `Production count: ${prodCounts[assocIndex][srcIndex].toLocaleString()}<br>`
             );
           }
           text.push(associationText);
@@ -432,7 +525,6 @@
         };
         const solrProd = 'https://solr.monarchinitiative.org/solr/golr/select/';
         const solrDev = 'https://solr-dev.monarchinitiative.org/solr/golr/select/';
-        const solrs = [solrProd, solrDev];
         const params = {
           'wt': 'json',
           'facet': true,
@@ -453,7 +545,7 @@
         let devSources;
         let prodSources;
 
-        for (const solr of solrs) {
+        for (const solr of [solrProd, solrDev]) {
           const solrResponse = await axios.get(solr, {
             params: params
           })
@@ -538,6 +630,10 @@
   }
 
   .chart {
+    padding-bottom: 1em;
+  }
+
+  .scigraph-version {
     padding-bottom: 1em;
   }
 
