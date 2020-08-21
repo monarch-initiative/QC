@@ -12,3 +12,6 @@ Rules and cypher queries are listed in the
 
 Or alternatively, create a ticket requesting a new rule
 in the [qc repo](https://github.com/monarch-initiative/qc)
+
+This report is based on the versions:  
+!!!include(metadata.md)!!!

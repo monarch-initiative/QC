@@ -2,13 +2,13 @@
   <div>
     <hr>
 
-    <div class="chart-title">Phenotype Associations By Source (Solr)</div>
-
     <div class="scigraph-version">
       Production build: <a :href="prodVersion" target="_blank">{{prodVersion}}</a>
       <br>
       Beta build: <a :href="devVersion" target="_blank">{{devVersion}}</a>
     </div>
+
+    <div class="chart-title">Phenotype Associations By Source (Solr)</div>
 
     <div v-show="!versionFetched" class="overview-spinner">
       <b-spinner
@@ -270,7 +270,7 @@
         this.otherValue = 'production';
       }
 
-      const solrData = await this.getSolrData();
+      const solrData = await this.getSolrPivot();
 
       this.makeHeatMap(solrData, this.phenotypeAssociations, 'phenotype-heatmap', selected);
       this.phenotypesFetched = true;
@@ -290,9 +290,9 @@
         const sessionStorage = window.sessionStorage;
 
         if (this.prodVersion === null && sessionStorage.getItem('prodVersion') === null) {
-          const [prodVersion, devVersion] = await this.fetchSciGraphVersion();
-          this.prodVersion = prodVersion;
+          const [devVersion, prodVersion] = await this.fetchSciGraphVersion();
           this.devVersion = devVersion;
+          this.prodVersion = prodVersion;
           sessionStorage.setItem('devVersion', JSON.stringify(devVersion));
           sessionStorage.setItem('prodVersion', JSON.stringify(prodVersion));
         } else if (sessionStorage.getItem('prodVersion') !== null) {
@@ -301,54 +301,43 @@
         }
       },
 
-      async fetchSciGraphVersion() {
-        const sciGraphProd = 'https://scigraph-data.monarchinitiative.org/scigraph/dynamic/datasets.json';
-        const sciGraphDev = 'https://scigraph-data-dev.monarchinitiative.org/scigraph/dynamic/datasets.json';
-        let devVersion;
-        let prodVersion;
-
-        for (const scigraph of [sciGraphProd, sciGraphDev]) {
-          const response = await axios.get(scigraph)
-            .then(function (response) {
-              return response.data
-            })
-            .catch(function (error) {
-              //console.log(error);
-            });
-          if (scigraph.startsWith('https://scigraph-data-dev')) {
-            for (const edge of response.edges) {
-              if (edge.pred === 'dcat:Distribution') {
-                if (edge.sub.endsWith('#ncbigene')) {
-                  devVersion = edge.sub
-                    .replace('MonarchArchive:', 'https://archive.monarchinitiative.org/')
-                    .replace('/#ncbigene', '');
-                  break;
-                }
-              }
-            }
-          } else {
-            // need to DRY this off
-            for (const edge of response.edges) {
-              if (edge.pred === 'dcat:Distribution') {
-                if (edge.sub.endsWith('#ncbigene')) {
-                  prodVersion = edge.sub
-                    .replace('MonarchArchive:', 'https://archive.monarchinitiative.org/')
-                    .replace('/#ncbigene', '');
-                  break;
-                }
-              }
+      _processSciGraphVersion(sciGraphResponse) {
+        let version;
+        for (const edge of sciGraphResponse.data.edges) {
+          if (edge.pred === 'dcat:Distribution') {
+            if (edge.sub.endsWith('#ncbigene')) {
+              version = edge.sub
+                .replace('MonarchArchive:', 'https://archive.monarchinitiative.org/')
+                .replace('/#ncbigene', '');
+              break;
             }
           }
         }
-        // Do this so they update at the same time in the html
-        return [prodVersion, devVersion];
+        return version;
+      },
+
+      async fetchSciGraphVersion() {
+        const sciGraphProd = 'https://scigraph-data.monarchinitiative.org/scigraph/dynamic/datasets.json';
+        const sciGraphDev = 'https://scigraph-data-dev.monarchinitiative.org/scigraph/dynamic/datasets.json';
+
+        let [devResponse, prodResponse] = await Promise.all(
+          [
+            this.getSciGraphData(sciGraphDev),
+            this.getSciGraphData(sciGraphProd)
+          ]
+        );
+
+        return [
+          this._processSciGraphVersion(devResponse),
+          this._processSciGraphVersion(prodResponse)
+        ];
 
       },
 
       async updateSolrData(value, qualifier, associations, plotDiv){
         this.setSpinner(plotDiv, false);
 
-        const solrData = await this.getSolrData(qualifier);
+        const solrData = await this.getSolrPivot(qualifier);
         this.makeHeatMap(solrData, associations, plotDiv, value);
         this.setSpinner(plotDiv, true);
 
@@ -490,12 +479,12 @@
 
         return counts;
       },
-      async getSolrData(qualifier = 'all') {
+      async getSolrPivot(qualifier = 'all') {
         let solrData;
         const sessionStorage = window.sessionStorage;
         if (qualifier === 'all') {
           if (this.solrData === null && sessionStorage.getItem('solrData') === null) {
-            solrData = await this.fetchSolrData('all');
+            solrData = await this.fetchSolrPivot('all');
             this.solrData = solrData;
             sessionStorage.setItem('solrData', JSON.stringify(solrData));
           } else if (sessionStorage.getItem('solrData') !== null) {
@@ -506,7 +495,7 @@
           }
         } else if (qualifier === 'direct') {
           if (this.solrDataDirect === null && sessionStorage.getItem('solrDataDirect') === null) {
-            solrData = await this.fetchSolrData('direct');
+            solrData = await this.fetchSolrPivot('direct');
             this.solrDataDirect = solrData;
             sessionStorage.setItem('solrDataDirect', JSON.stringify(solrData));
           } else if (!sessionStorage.getItem('solrDataDirect') !== null) {
@@ -518,7 +507,7 @@
         }
         return solrData;
       },
-      async fetchSolrData(qualifier) {
+      async fetchSolrPivot(qualifier) {
         const solrData = {
           'solrDev': {},
           'solrProd': {}
@@ -531,7 +520,10 @@
           'json.nl': 'arrarr',
           'rows': 0,
           'q': '*:*',
-          'facet.field': 'is_defined_by',
+          // facet.pivot.mincount=0 included because kegg has no direct associations
+          // which is a integration bug, this could be removed when that is fixed
+          // for a slight speed up
+          'facet.pivot.mincount': 0,
           'facet.pivot': 'association_type,is_defined_by',
           'facet.limit': '500'
         };
@@ -539,32 +531,23 @@
           params.fq = "qualifier:direct";
         }
         const pivotTables = {
-          'solrProd': {},
           'solrDev': {},
+          'solrProd': {}
         };
-        let devSources;
-        let prodSources;
 
-        for (const solr of [solrProd, solrDev]) {
-          const solrResponse = await axios.get(solr, {
-            params: params
-          })
-          .then(function (response) {
-            return response.data
-          })
-          .catch(function (error) {
-            //console.log(error);
-          });
-          if (solr.startsWith("https://solr-dev")) {
-            pivotTables.solrDev = solrResponse.facet_counts.facet_pivot['association_type,is_defined_by'];
-            devSources = solrResponse.facet_counts.facet_fields.is_defined_by
-              .map(src => this.processSource(src[0]))
-          } else {
-            pivotTables.solrProd = solrResponse.facet_counts.facet_pivot['association_type,is_defined_by'];
-            prodSources = solrResponse.facet_counts.facet_fields.is_defined_by
-              .map(src => this.processSource(src[0]))
-          }
-        }
+        let [devSolrResp, prodSolrResp] = await Promise.all(
+          [this.getSolrData(solrDev, params), this.getSolrData(solrProd, params)]);
+
+        pivotTables.solrDev = devSolrResp.data.facet_counts.facet_pivot['association_type,is_defined_by'];
+        pivotTables.solrProd = prodSolrResp.data.facet_counts.facet_pivot['association_type,is_defined_by'];
+
+        let devSources = pivotTables.solrDev.flatMap(pivotTable =>
+            pivotTable.pivot.map(source => this.processSource(source.value))
+        );
+
+        let prodSources = pivotTables.solrProd.flatMap(pivotTable =>
+            pivotTable.pivot.map(source => this.processSource(source.value))
+        );
 
         // In case theres a new source (or source removed)
         const allSources = Array.from(new Set(devSources.concat(prodSources))).sort();
@@ -594,6 +577,14 @@
         }
 
         return solrData;
+      },
+      async getSolrData(solr, params) {
+        return axios.get(solr, {
+          params: params
+        })
+      },
+      async getSciGraphData(scigraph) {
+        return axios.get(scigraph);
       },
       setSpinner(plotDiv, bool) {
         // this is so awful

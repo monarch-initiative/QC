@@ -10,3 +10,6 @@ The queries are not exhaustive; solr queries are configured and can be added to 
 
 Or alternatively, create a ticket requesting a new query
 in the [qc repo](https://github.com/monarch-initiative/qc)
+
+This report is based on the versions:  
+!!!include(metadata.md)!!!
