@@ -9,8 +9,8 @@
   },
   "repository": "/qc",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vuepress dev docs --no-cache",
+    "build": "vuepress build docs --no-cache"
   },
   "license": "MIT",
   "devDependencies": {

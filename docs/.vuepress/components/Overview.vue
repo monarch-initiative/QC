@@ -262,6 +262,8 @@
       await this.getSciGraphVersion();
       this.versionFetched = true;
 
+      const solrData = await this.getSolrPivot();
+
       if (this.devVersion === this.prodVersion) {
         selected = 'production';
         this.phenotypeValue = 'production';
@@ -269,8 +271,6 @@
         this.publicationValue = 'production';
         this.otherValue = 'production';
       }
-
-      const solrData = await this.getSolrPivot();
 
       this.makeHeatMap(solrData, this.phenotypeAssociations, 'phenotype-heatmap', selected);
       this.phenotypesFetched = true;
