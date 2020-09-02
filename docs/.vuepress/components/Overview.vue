@@ -3,21 +3,19 @@
     <hr>
 
     <div class="scigraph-version">
+      <div v-show="!versionFetched" class="overview-spinner">
+        <b-spinner
+          class="loading-spinner"
+          type="grow"
+          label="Loading"
+        />
+      </div>
       Production build: <a :href="prodVersion" target="_blank">{{prodVersion}}</a>
       <br>
       Beta build: <a :href="devVersion" target="_blank">{{devVersion}}</a>
     </div>
 
     <div class="chart-title">Phenotype Associations By Source (Solr)</div>
-
-    <div v-show="!versionFetched" class="overview-spinner">
-      <b-spinner
-        class="loading-spinner"
-        type="grow"
-        label="Loading"
-      />
-    </div>
-
 
     <b-form-group>
       <b-form-radio-group
@@ -399,7 +397,7 @@
         const layout = {
           autosize: false,
           margin: {l:155, r:0, t:80, b:80},
-          height: 25 * association.length + 160,
+          height: 23 * association.length + 160,
           width: 920,
           xaxis: {
              // title: 'Source'
@@ -412,7 +410,8 @@
             // title: 'Association'
             tickfont: {
               size: 13
-            }
+            },
+            showgrid: false
           },
         };
 
@@ -424,7 +423,9 @@
             type: 'heatmap',
             hoverongaps: false,
             hoverinfo: 'text',
-            text: text
+            text: text,
+            xgap: 3,
+            ygap: 3
           }
         ];
 

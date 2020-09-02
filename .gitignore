@@ -11,7 +11,7 @@ dist
 config.local.js
 basement_dist
 
-docs/.vuepress/public/gv/biolink/
+docs/.vuepress/public/gv/
 docs/.vuepress/public/md/
 
 docs/solr/solr-diff.md
