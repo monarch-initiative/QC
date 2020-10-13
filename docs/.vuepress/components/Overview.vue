@@ -221,6 +221,7 @@
           'disease_phenotype',
           'marker_disease',
           'gene_disease',
+          'chemical_disease',
         ],
         publicationAssociations: [
           'publication_model',
