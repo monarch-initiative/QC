@@ -303,7 +303,7 @@
       _processSciGraphVersion(sciGraphResponse) {
         let version;
         for (const edge of sciGraphResponse.data.edges) {
-          if (edge.pred === 'dcat:Distribution') {
+          if (edge.pred === 'dcat:distribution') {
             if (edge.sub.endsWith('#ncbigene')) {
               version = edge.sub
                 .replace('MonarchArchive:', 'https://archive.monarchinitiative.org/')
@@ -330,7 +330,6 @@
           this._processSciGraphVersion(devResponse),
           this._processSciGraphVersion(prodResponse)
         ];
-
       },
 
       async updateSolrData(value, qualifier, associations, plotDiv){
@@ -339,7 +338,6 @@
         const solrData = await this.getSolrPivot(qualifier);
         this.makeHeatMap(solrData, associations, plotDiv, value);
         this.setSpinner(plotDiv, true);
-
       },
 
       makeHeatMap(solrData, association, plotDiv, selected = 'percent') {
