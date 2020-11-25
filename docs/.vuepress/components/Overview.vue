@@ -403,7 +403,8 @@
             tickangle: 45,
             tickfont: {
               size: 13.5
-            }
+            },
+            showgrid: false
           },
           yaxis: {
             // title: 'Association'
