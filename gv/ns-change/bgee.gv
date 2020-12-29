@@ -1,0 +1,45 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="bgee <=> bgee"
+ENSEMBL -> CL [label=<RO:0002206 ! expressed in (0)>, color="black"];
+ENSEMBL -> EMAPA [label=<RO:0002206 ! expressed in (0)>, color="black"];
+ENSEMBL -> FBbt [label=<RO:0002206 ! expressed in (0)>, color="black"];
+ENSEMBL -> MA [label=<RO:0002206 ! expressed in (0)>, color="black"];
+ENSEMBL -> SO [label=<rdf:type (0)>, color="black"];
+ENSEMBL -> UBERON [label=<RO:0002206 ! expressed in (0)>, color="black"];
+ENSEMBL -> WBbt [label=<RO:0002206 ! expressed in (0)>, color="black"];
+ENSEMBL -> ZFA [label=<RO:0002206 ! expressed in (0)>, color="black"];
+GENO -> owl [label=<rdf:type (0)>, color="black"];
+MONARCH -> CL [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> EMAPA [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> ENSEMBL [label=<OBAN:association_has_subject ! association has subject (0)>, color="black"];
+MONARCH -> FBbt [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> LITERAL [label=<GENO:0000866 ! has_quantifier (0)>, color="black"];
+MONARCH -> MA [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> OBAN [label=<rdf:type (0)>, color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (0)>, color="black"];
+MONARCH -> UBERON [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> WBbt [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> ZFA [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

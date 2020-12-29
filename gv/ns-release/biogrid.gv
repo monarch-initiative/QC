@@ -1,0 +1,25 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+BIOGRID -> ENSEMBL [label=<owl:equivalentClass ! equivalent_class (43207)>];
+BIOGRID -> HGNC [label=<owl:equivalentClass ! equivalent_class (35662)>];
+BIOGRID -> MGI [label=<owl:equivalentClass ! equivalent_class (65037)>];
+BIOGRID -> NCBIGene [label=<owl:equivalentClass ! equivalent_class (117058)>];
+MONARCH -> NCBIGene [label=<OBAN:association_has_object ! association has object (717957)>];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (717957)>];
+MONARCH -> NCBIGene [label=<OBAN:association_has_subject ! association has subject (717957)>];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence (754467)>];
+MONARCH -> PMID [label=<dc:source ! Source (816908)>];
+MONARCH -> OBAN [label=<rdf:type (717957)>];
+MONARCH -> owl [label=<rdf:type (2)>];
+MonarchArchive -> owl [label=<rdf:type (1)>];
+NCBIGene -> NCBIGene [label=<RO:0002325 ! colocalizes with (94780)>];
+NCBIGene -> NCBIGene [label=<RO:0002434 ! interacts with (596975)>];
+NCBIGene -> NCBIGene [label=<RO:0002435 ! genetically interacts with (26202)>];
+OBAN -> owl [label=<rdf:type (3)>];
+RO -> owl [label=<rdf:type (4)>];
+dc -> owl [label=<rdf:type (1)>];
+LITERAL [shape=record];
+labelloc="t";
+label="biogrid (20201221)";
+}

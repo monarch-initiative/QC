@@ -1,0 +1,48 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="gwascatalog <=> gwascatalog"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+dbSNP -> NCBITaxon [label=<RO:0002162 ! in taxon >, penwidth = "1.00875", weight = "1660", color="black"];
+BNODE -> faldo [label=<rdf:type >, penwidth = "2.01629", weight = "3318", color="black"];
+dbSNP -> LITERAL [label=<dc:description >, penwidth = "0.685464", weight = "1128", color="black"];
+MONARCH -> dbSNP [label=<OBAN:association_has_subject ! association has subject >, penwidth = "2.07523", weight = "3415", color="black"];
+dbSNP -> LITERAL [label=<rdfs:label >, penwidth = "1.23055", weight = "2025", color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate >, penwidth = "2.10744", weight = "3468", color="black"];
+MONARCH -> OBAN [label=<rdf:type >, penwidth = "2.10744", weight = "3468", color="black"];
+BNODE -> NCBITaxon [label=<RO:0002162 ! in taxon >, penwidth = "0.0291687", weight = "48", color="black"];
+dbSNP -> EFO [label=<RO:0003304 ! contributes to condition >, penwidth = "2.02783", weight = "3337", color="black"];
+dbSNP -> BNODE [label=<faldo:location >, penwidth = "1.00875", weight = "1660", color="black"];
+MONARCH -> BNODE [label=<OBAN:association_has_subject ! association has subject >, penwidth = "0.0309917", weight = "51", color="black"];
+BNODE -> SO [label=<rdf:type >, penwidth = "0.0583374", weight = "96", color="black"];
+BNODE -> LITERAL [label=<faldo:position >, penwidth = "1.00814", weight = "1659", color="black"];
+BNODE -> BNODE [label=<faldo:begin >, penwidth = "1.00814", weight = "1659", color="black"];
+BNODE -> EFO [label=<RO:0003304 ! contributes to condition >, penwidth = "0.0303841", weight = "50", color="black"];
+dbSNP -> SO [label=<rdf:type >, penwidth = "2.0175", weight = "3320", color="black"];
+BNODE -> CHR [label=<faldo:reference >, penwidth = "1.00814", weight = "1659", color="black"];
+dbSNP -> MONDO [label=<RO:0003304 ! contributes to condition >, penwidth = "0.0455761", weight = "75", color="black"];
+dbSNP -> ENSEMBL [label=<RO:0002529 ! is downstream of sequence of >, penwidth = "0.306271", weight = "504", color="black"];
+MONARCH -> EFO [label=<OBAN:association_has_object ! association has object >, penwidth = "2.05943", weight = "3389", color="black"];
+dbSNP -> ENSEMBL [label=<RO:0002528 ! is upstream of sequence of >, penwidth = "0.306271", weight = "504", color="black"];
+MONARCH -> LITERAL [label=<dc:description >, penwidth = "5", weight = "8228", color="black"];
+MONARCH -> PMID [label=<dc:source ! Source >, penwidth = "2.29703", weight = "3780", color="black"];
+MONARCH -> MONDO [label=<OBAN:association_has_object ! association has object >, penwidth = "0.0461838", weight = "76", color="black"];
+BNODE -> LITERAL [label=<rdfs:label >, penwidth = "2.04545", weight = "3366", color="black"];
+BNODE -> LITERAL [label=<MONARCH:cliqueLeader ! clique_leader >, penwidth = "0.0291687", weight = "48", color="black"];
+BNODE -> BNODE [label=<faldo:end >, penwidth = "1.00814", weight = "1659", color="black"];
+dbSNP -> ENSEMBL [label=<GENO:0000418 ! has_affected_feature >, penwidth = "1.02698", weight = "1690", color="black"];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence >, penwidth = "2.10744", weight = "3468", color="black"];
+dbSNP -> LITERAL [label=<MONARCH:cliqueLeader ! clique_leader >, penwidth = "1.00632", weight = "1656", color="black"];
+}

@@ -1,0 +1,34 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="zfinslim <=> zfinslim"
+MONARCH -> ECO [label=<RO:0002558 ! has evidence (93)>, color="black"];
+MONARCH -> OBAN [label=<rdf:type (93)>, color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (93)>, color="black"];
+MONARCH -> ZFIN [label=<OBAN:association_has_subject ! association has subject (93)>, color="black"];
+MONARCH -> ZFIN [label=<dc:source ! Source (99)>, color="black"];
+MONARCH -> ZP [label=<OBAN:association_has_object ! association has object (93)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+ZFIN -> IAO [label=<rdf:type (21)>, color="black"];
+ZFIN -> LITERAL [label=<MONARCH:cliqueLeader ! clique_leader (10)>, color="black"];
+ZFIN -> ZP [label=<RO:0002200 ! has phenotype (93)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

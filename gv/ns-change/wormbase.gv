@@ -1,0 +1,72 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="wormbase <=> wormbase"
+BNODE -> BNODE [label=<faldo:begin (0)>, color="black"];
+BNODE -> BNODE [label=<faldo:end (0)>, color="black"];
+BNODE -> CHR [label=<faldo:reference (0)>, color="black"];
+BNODE -> GENO [label=<rdf:type (0)>, color="black"];
+BNODE -> LITERAL [label=<faldo:position (0)>, color="black"];
+BNODE -> LITERAL [label=<rdfs:label (0)>, color="black"];
+BNODE -> WBPhenotype [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+BNODE -> WormBase [label=<GENO:0000443 ! is_expression_variant_of (0)>, color="black"];
+BNODE -> WormBase [label=<GENO:0000634 ! is_targeted_by (0)>, color="black"];
+BNODE -> faldo [label=<rdf:type (0)>, color="black"];
+GENO -> owl [label=<rdf:type (0)>, color="black"];
+MONARCH -> BNODE [label=<OBAN:association_has_subject ! association has subject (0)>, color="black"];
+MONARCH -> DOID [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence (0)>, color="black"];
+MONARCH -> LITERAL [label=<dc:source ! Source (0)>, color="black"];
+MONARCH -> LITERAL [label=<rdfs:label (0)>, color="black"];
+MONARCH -> OBAN [label=<rdf:type (0)>, color="black"];
+MONARCH -> PMID [label=<dc:source ! Source (0)>, color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (0)>, color="black"];
+MONARCH -> SO [label=<rdf:type (0)>, color="black"];
+MONARCH -> WBPhenotype [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> WormBase [label=<OBAN:association_has_subject ! association has subject (0)>, color="black"];
+MONARCH -> WormBase [label=<RO:0002350 ! member of (0)>, color="black"];
+MONARCH -> WormBase [label=<dc:source ! Source (0)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+WormBase -> BNODE [label=<faldo:location (0)>, color="black"];
+WormBase -> DOID [label=<RO:0003301 ! is model of (0)>, color="black"];
+WormBase -> GENO [label=<rdf:type (0)>, color="black"];
+WormBase -> IAO [label=<rdf:type (0)>, color="black"];
+WormBase -> LITERAL [label=<dc:description (0)>, color="black"];
+WormBase -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym (0)>, color="black"];
+WormBase -> LITERAL [label=<owl:deprecated (0)>, color="black"];
+WormBase -> LITERAL [label=<rdfs:label (0)>, color="black"];
+WormBase -> MONARCH [label=<RO:0002351 ! has member (0)>, color="black"];
+WormBase -> NCBITaxon [label=<RO:0002162 ! in taxon (0)>, color="black"];
+WormBase -> SO [label=<rdf:type (0)>, color="black"];
+WormBase -> SO [label=<rdfs:subClassOf ! subclass_of (0)>, color="black"];
+WormBase -> WBPhenotype [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+WormBase -> WormBase [label=<GENO:0000408 ! is_allele_of (0)>, color="black"];
+WormBase -> WormBase [label=<GENO:0000414 ! targets_gene (0)>, color="black"];
+WormBase -> WormBase [label=<GENO:0000443 ! is_expression_variant_of (0)>, color="black"];
+WormBase -> biolink [label=<biolink:category (0)>, color="black"];
+WormBase -> foaf [label=<rdf:type (0)>, color="black"];
+WormBase -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+faldo -> owl [label=<rdf:type (0)>, color="black"];
+oboInOwl -> owl [label=<rdf:type (0)>, color="black"];
+owl -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

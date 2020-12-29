@@ -1,0 +1,58 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="clinvar <=> clinvar"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+BNODE -> SEPIO [label=<rdf:type >, penwidth = "1.47805", weight = "10085", color="black"];
+PMID -> IAO [label=<rdf:type >, penwidth = "0.23039", weight = "1572", color="pink"];
+BNODE -> ECO [label=<rdf:type >, penwidth = "0.812229", weight = "5542", color="black"];
+ClinVarVariant -> UMLS [label=<GENO:0000841 ! likely_pathogenic_for_condition >, penwidth = "0.0703482", weight = "480", color="black"];
+ClinVarVariant -> MONDO [label=<GENO:0000844 ! likely_benign_for_condition >, penwidth = "0.0480713", weight = "328", color="black"];
+ClinVarVariant -> SO [label=<rdf:type >, penwidth = "0.430443", weight = "2937", color="black"];
+MONARCH -> ClinVar [label=<oboInOwl:hasDbXref ! database_cross_reference >, penwidth = "0.763278", weight = "5208", color="black"];
+MONARCH -> OBAN [label=<rdf:type >, penwidth = "0.763278", weight = "5208", color="black"];
+ClinVarVariant -> LITERAL [label=<rdfs:label >, penwidth = "0.43015", weight = "2935", color="black"];
+ClinVarVariant -> MONDO [label=<GENO:0000841 ! likely_pathogenic_for_condition >, penwidth = "0.0709345", weight = "484", color="black"];
+BNODE -> BNODE [label=<SEPIO:0000111 ! is_assertion_supported_by_evidence >, penwidth = "0.763278", weight = "5208", color="black"];
+ClinVarVariant -> OMIM [label=<GENO:0000841 ! likely_pathogenic_for_condition >, penwidth = "0.174405", weight = "1190", color="black"];
+MONARCH -> BNODE [label=<SEPIO:0000015 ! is_asserted_in >, penwidth = "0.763278", weight = "5208", color="black"];
+ClinVarVariant -> NCBIGene [label=<GENO:0000418 ! has_affected_feature >, penwidth = "0.111678", weight = "762", color="black"];
+MONARCH -> MONARCH [label=<SEPIO:0000098 ! is_equilavent_to >, penwidth = "0.567476", weight = "3872", color="black"];
+MONARCH -> BNODE [label=<SEPIO:0000007 ! has_supporting_evidence_line >, penwidth = "0.763278", weight = "5208", color="black"];
+MONARCH -> OMIMPS [label=<OBAN:association_has_object ! association has object >, penwidth = "0.0294583", weight = "201", color="black"];
+ClinVarVariant -> OMIM [label=<GENO:0000840 ! pathogenic_for_condition >, penwidth = "0.044847", weight = "306", color="black"];
+ClinVarVariant -> MONDO [label=<GENO:0000840 ! pathogenic_for_condition >, penwidth = "0.0621409", weight = "424", color="black"];
+ClinVarVariant -> NCBIGene [label=<BFO:0000050 ! part_of >, penwidth = "0.561906", weight = "3834", color="black"];
+MONARCH -> PMID [label=<dc:source ! Source >, penwidth = "1.89515", weight = "12931", color="pink"];
+ClinVarVariant -> OMIM [label=<GENO:0000844 ! likely_benign_for_condition >, penwidth = "0.0315101", weight = "215", color="pink"];
+BNODE -> BNODE [label=<SEPIO:0000085 ! has_supporting_activity >, penwidth = "0.763571", weight = "5210", color="black"];
+ClinVarVariant -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym >, penwidth = "5", weight = "34116", color="black"];
+BNODE -> LITERAL [label=<dc:created ! Date Created >, penwidth = "0.650428", weight = "4438", color="black"];
+MONARCH -> OMIM [label=<OBAN:association_has_object ! association has object >, penwidth = "0.200932", weight = "1371", color="black"];
+BNODE -> ClinVarSubmitters [label=<SEPIO:0000018 ! created_by >, penwidth = "0.763278", weight = "5208", color="black"];
+MONARCH -> ClinVarVariant [label=<OBAN:association_has_subject ! association has subject >, penwidth = "0.763278", weight = "5208", color="black"];
+ClinVarVariant -> NCBITaxon [label=<RO:0002162 ! in taxon >, penwidth = "0.430004", weight = "2934", color="black"];
+BNODE -> LITERAL [label=<dc:identifier >, penwidth = "0.763278", weight = "5208", color="black"];
+MONARCH -> MONARCH [label=<SEPIO:0000099 ! is_consistent_with >, penwidth = "0.113143", weight = "772", color="black"];
+BNODE -> PMID [label=<SEPIO:0000124 ! has_supporting_reference >, penwidth = "1.89515", weight = "12931", color="pink"];
+ClinVarVariant -> dbSNP [label=<oboInOwl:hasDbXref ! database_cross_reference >, penwidth = "0.0282858", weight = "193", color="black"];
+BNODE -> BNODE [label=<SEPIO:0000041 ! is_specified_by >, penwidth = "0.663179", weight = "4525", color="black"];
+BNODE -> LITERAL [label=<rdfs:label >, penwidth = "3.81727", weight = "26046", color="black"];
+MONARCH -> MONDO [label=<OBAN:association_has_object ! association has object >, penwidth = "0.203277", weight = "1387", color="black"];
+ClinVarVariant -> UMLS [label=<GENO:0000840 ! pathogenic_for_condition >, penwidth = "0.173672", weight = "1185", color="black"];
+MONARCH -> UMLS [label=<OBAN:association_has_object ! association has object >, penwidth = "0.310412", weight = "2118", color="black"];
+MONARCH -> LITERAL [label=<SEPIO:0000168 ! assertion_confidence_score >, penwidth = "0.763278", weight = "5208", color="black"];
+MONARCH -> GENO [label=<OBAN:association_has_predicate ! association has predicate >, penwidth = "0.763278", weight = "5208", color="black"];
+}

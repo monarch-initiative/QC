@@ -1,0 +1,28 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="string <=> string"
+ENSEMBL -> ENSEMBL [label=<RO:0002434 ! interacts with (0)>, color="black"];
+ENSEMBL -> SO [label=<rdf:type (0)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+NCBIGene -> NCBIGene [label=<RO:0002434 ! interacts with (0)>, color="black"];
+NCBIGene -> SO [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

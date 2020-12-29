@@ -1,0 +1,55 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="mpd <=> mpd"
+BNODE -> BNODE [label=<GENO:0000650 ! has_sex_agnostic_part (32)>, color="black"];
+BNODE -> GENO [label=<rdf:type (59)>, color="black"];
+BNODE -> LITERAL [label=<rdfs:label (59)>, color="black"];
+BNODE -> MP [label=<RO:0002200 ! has phenotype (169)>, color="black"];
+BNODE -> VT [label=<RO:0002200 ! has phenotype (204)>, color="black"];
+GENO -> owl [label=<rdf:type (0)>, color="black"];
+MONARCH -> BNODE [label=<OBAN:association_has_subject ! association has subject (373)>, color="black"];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence (373)>, color="black"];
+MONARCH -> LITERAL [label=<rdfs:comment (695)>, color="black"];
+MONARCH -> MP [label=<OBAN:association_has_object ! association has object (169)>, color="black"];
+MONARCH -> MPD_assay [label=<RO:0002558 ! has evidence (695)>, color="black"];
+MONARCH -> OBAN [label=<rdf:type (373)>, color="black"];
+MONARCH -> PATO [label=<BASE:has_sex_specificity (373)>, color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (373)>, color="black"];
+MONARCH -> VT [label=<OBAN:association_has_object ! association has object (204)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MPD_assay -> LITERAL [label=<dc:description (115)>, color="black"];
+MPD_assay -> LITERAL [label=<rdfs:label (115)>, color="black"];
+MPD_assay -> OBI [label=<rdf:type (115)>, color="black"];
+MPD_strain -> BNODE [label=<GENO:0000222 ! has_genotype (27)>, color="black"];
+MPD_strain -> JAX [label=<owl:sameAs ! same_as (0)>, color="black"];
+MPD_strain -> LITERAL [label=<dc:description (0)>, color="black"];
+MPD_strain -> LITERAL [label=<oboInOwl:hasDbXref ! database_cross_reference (0)>, color="black"];
+MPD_strain -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym (0)>, color="black"];
+MPD_strain -> LITERAL [label=<rdfs:label (0)>, color="black"];
+MPD_strain -> NCBITaxon [label=<rdf:type (0)>, color="black"];
+MPD_strain -> RBRC [label=<owl:sameAs ! same_as (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+NCBITaxon -> owl [label=<rdf:type (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+PATO -> biolink [label=<biolink:category (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+oboInOwl -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

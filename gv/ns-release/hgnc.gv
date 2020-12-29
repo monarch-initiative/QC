@@ -1,0 +1,26 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+CHR -> HGNC [label=<RO:0002524 ! has subsequence (42099)>];
+CHR -> owl [label=<rdf:type (1006)>];
+HGNC -> LITERAL [label=<MONARCH:cliqueLeader ! clique_leader (42340)>];
+HGNC -> NCBITaxon [label=<RO:0002162 ! in taxon (42340)>];
+HGNC -> CHR [label=<RO:0002525 ! is subsequence of (42099)>];
+HGNC -> LITERAL [label=<dc:description (42340)>];
+HGNC -> ENSEMBL [label=<owl:equivalentClass ! equivalent_class (39363)>];
+HGNC -> NCBIGene [label=<owl:equivalentClass ! equivalent_class (42295)>];
+HGNC -> OMIM [label=<owl:equivalentClass ! equivalent_class (16252)>];
+HGNC -> owl [label=<rdf:type (42340)>];
+HGNC -> LITERAL [label=<rdfs:label (42340)>];
+HGNC -> SO [label=<rdfs:subClassOf ! subclass_of (42340)>];
+IAO -> owl [label=<rdf:type (1)>];
+MONARCH -> owl [label=<rdf:type (2)>];
+MonarchArchive -> owl [label=<rdf:type (1)>];
+PMID -> HGNC [label=<IAO:0000136 ! is_about (32311)>];
+RO -> owl [label=<rdf:type (3)>];
+dc -> owl [label=<rdf:type (2)>];
+rdfs -> owl [label=<rdf:type (1)>];
+LITERAL [shape=record];
+labelloc="t";
+label="hgnc (20201221)";
+}

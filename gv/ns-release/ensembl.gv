@@ -1,0 +1,29 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+ENSEMBL -> NCBITaxon [label=<RO:0002162 ! in taxon (110804)>];
+ENSEMBL -> ENSEMBL [label=<RO:0002205 ! has gene product (298266)>];
+ENSEMBL -> UniProtKB [label=<RO:0002205 ! has gene product (46973)>];
+ENSEMBL -> biolink [label=<biolink:category (110804)>];
+ENSEMBL -> LITERAL [label=<dc:description (85395)>];
+ENSEMBL -> NCBIGene [label=<oboInOwl:hasDbXref ! database_cross_reference (21782)>];
+ENSEMBL -> UniProtKB [label=<oboInOwl:hasDbXref ! database_cross_reference (87576)>];
+ENSEMBL -> HGNC [label=<owl:equivalentClass ! equivalent_class (22544)>];
+ENSEMBL -> NCBIGene [label=<owl:equivalentClass ! equivalent_class (84147)>];
+ENSEMBL -> SO [label=<rdf:type (298266)>];
+ENSEMBL -> owl [label=<rdf:type (110804)>];
+ENSEMBL -> LITERAL [label=<rdfs:label (110755)>];
+ENSEMBL -> SO [label=<rdfs:subClassOf ! subclass_of (110804)>];
+HGNC -> biolink [label=<biolink:category (19836)>];
+MONARCH -> owl [label=<rdf:type (2)>];
+MonarchArchive -> owl [label=<rdf:type (1)>];
+NCBIGene -> biolink [label=<biolink:category (96596)>];
+RO -> owl [label=<rdf:type (2)>];
+UniProtKB -> SO [label=<rdf:type (43925)>];
+dc -> owl [label=<rdf:type (2)>];
+oboInOwl -> owl [label=<rdf:type (1)>];
+rdfs -> owl [label=<rdf:type (1)>];
+LITERAL [shape=record];
+labelloc="t";
+label="ensembl (20201221)";
+}

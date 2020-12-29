@@ -1,0 +1,28 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="mmrrc <=> mmrrc"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+MMRRC -> LITERAL [label=<rdfs:label >, penwidth = "1.75", weight = "14", color="black"];
+BNODE -> NCBITaxon [label=<RO:0002162 ! in taxon >, penwidth = "2", weight = "16", color="black"];
+BNODE -> BNODE [label=<GENO:0000385 ! has_reference_part >, penwidth = "2", weight = "16", color="black"];
+MMRRC -> NCBITaxon [label=<rdf:type >, penwidth = "1.875", weight = "15", color="black"];
+MMRRC -> BNODE [label=<GENO:0000222 ! has_genotype >, penwidth = "2", weight = "16", color="black"];
+MMRRC -> LITERAL [label=<MONARCH:cliqueLeader ! clique_leader >, penwidth = "1.75", weight = "14", color="black"];
+BNODE -> BNODE [label=<GENO:0000382 ! has_variant_part >, penwidth = "2.25", weight = "18", color="black"];
+BNODE -> GENO [label=<rdf:type >, penwidth = "5", weight = "40", color="black"];
+BNODE -> LITERAL [label=<rdfs:label >, penwidth = "5", weight = "40", color="black"];
+BNODE -> LITERAL [label=<dc:description >, penwidth = "2", weight = "16", color="black"];
+}

@@ -1,0 +1,39 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="hpoa <=> hpoa"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+ORPHA -> owl [label=<rdf:type >, penwidth = "0.0664758", weight = "65", color="black"];
+OMIM -> SIO [label=<rdf:type >, penwidth = "0.0368173", weight = "36", color="pink"];
+MONARCH -> OMIM [label=<OBAN:association_has_subject ! association has subject >, penwidth = "1.39395", weight = "1363", color="black"];
+MONARCH -> HP [label=<BASE:frequencyOfPhenotype >, penwidth = "3.53856", weight = "3460", color="black"];
+PMID -> IAO [label=<rdf:type >, penwidth = "0.191246", weight = "187", color="black"];
+ORPHA -> SIO [label=<rdf:type >, penwidth = "0.0664758", weight = "65", color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate >, penwidth = "5", weight = "4889", color="black"];
+MONARCH -> ORPHA [label=<OBAN:association_has_subject ! association has subject >, penwidth = "3.60605", weight = "3526", color="black"];
+MONARCH -> OBAN [label=<rdf:type >, penwidth = "5", weight = "4889", color="black"];
+MONARCH -> HP [label=<OBAN:association_has_object ! association has object >, penwidth = "5", weight = "4889", color="black"];
+MONARCH -> ORPHA [label=<dc:source ! Source >, penwidth = "3.60605", weight = "3526", color="black"];
+MONARCH -> HP [label=<BASE:onset >, penwidth = "0.16261", weight = "159", color="black"];
+OMIM -> HP [label=<RO:0000091 ! has disposition >, penwidth = "0.115566", weight = "113", color="black"];
+ORPHA -> HP [label=<RO:0002200 ! has phenotype >, penwidth = "3.6081", weight = "3528", color="black"];
+OMIM -> owl [label=<rdf:type >, penwidth = "0.0429536", weight = "42", color="black"];
+MONARCH -> LITERAL [label=<BASE:frequencyOfPhenotype >, penwidth = "1.68951", weight = "1652", color="black"];
+OMIM -> HP [label=<RO:0002200 ! has phenotype >, penwidth = "1.24156", weight = "1214", color="black"];
+MONARCH -> PMID [label=<dc:source ! Source >, penwidth = "2.29495", weight = "2244", color="black"];
+MONARCH -> OMIM [label=<dc:source ! Source >, penwidth = "0.708734", weight = "693", color="pink"];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence >, penwidth = "5", weight = "4889", color="black"];
+HP -> owl [label=<rdf:type >, penwidth = "0.0910207", weight = "89", color="black"];
+}

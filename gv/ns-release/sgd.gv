@@ -1,0 +1,32 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+APO -> LITERAL [label=<rdfs:label (15)>];
+APO -> UPHENO [label=<rdfs:subClassOf ! subclass_of (8)>];
+MONARCH -> APO [label=<OBAN:association_has_object ! association has object (8507)>];
+MONARCH -> MONARCH [label=<OBAN:association_has_object ! association has object (60168)>];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (68675)>];
+MONARCH -> SGD [label=<OBAN:association_has_subject ! association has subject (68675)>];
+MONARCH -> APO [label=<RO:0002558 ! has evidence (101041)>];
+MONARCH -> LITERAL [label=<dc:description (129533)>];
+MONARCH -> PMID [label=<dc:source ! Source (105462)>];
+MONARCH -> SGD_REF [label=<dc:source ! Source (25)>];
+MONARCH -> OBAN [label=<rdf:type (68675)>];
+MONARCH -> owl [label=<rdf:type (2)>];
+MONARCH -> LITERAL [label=<rdfs:label (627)>];
+MONARCH -> UPHENO [label=<rdfs:subClassOf ! subclass_of (627)>];
+MonarchArchive -> owl [label=<rdf:type (1)>];
+OBAN -> owl [label=<rdf:type (3)>];
+PMID -> SGD_REF [label=<owl:sameAs ! same_as (5940)>];
+PMID -> IAO [label=<rdf:type (5940)>];
+RO -> owl [label=<rdf:type (2)>];
+SGD -> APO [label=<RO:0002200 ! has phenotype (8507)>];
+SGD -> MONARCH [label=<RO:0002200 ! has phenotype (60168)>];
+SGD -> LITERAL [label=<rdfs:label (5208)>];
+SGD_REF -> IAO [label=<rdf:type (15)>];
+dc -> owl [label=<rdf:type (2)>];
+rdfs -> owl [label=<rdf:type (1)>];
+LITERAL [shape=record];
+labelloc="t";
+label="sgd (20201221)";
+}

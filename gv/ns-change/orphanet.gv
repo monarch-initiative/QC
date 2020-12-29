@@ -1,0 +1,65 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="orphanet <=> orphanet"
+ENSEMBL -> biolink [label=<biolink:category (0)>, color="black"];
+ENSEMBL -> owl [label=<rdf:type (0)>, color="black"];
+Genatlas -> biolink [label=<biolink:category (0)>, color="black"];
+Genatlas -> owl [label=<rdf:type (0)>, color="black"];
+HGNC -> ENSEMBL [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+HGNC -> Genatlas [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+HGNC -> IUPHAR [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+HGNC -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym (0)>, color="black"];
+HGNC -> OMIM [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+HGNC -> ORPHA [label=<RO:0002607 ! is marker for (2)>, color="black"];
+HGNC -> ORPHA [label=<RO:0003304 ! contributes to condition (0)>, color="black"];
+HGNC -> ORPHA [label=<RO:0004011 ! is causal gain of function germline mutation of in (0)>, color="black"];
+HGNC -> ORPHA [label=<RO:0004012 ! is causal loss of function germline mutation of in (0)>, color="black"];
+HGNC -> ORPHA [label=<RO:0004013 ! is causal germline mutation in (0)>, color="black"];
+HGNC -> ORPHA [label=<RO:0004014 ! is causal somatic mutation in (0)>, color="black"];
+HGNC -> ORPHA [label=<RO:0004015 ! is causal susceptibility factor for (0)>, color="black"];
+HGNC -> ORPHA [label=<RO:0004016 ! is causal germline mutation partially giving rise to (0)>, color="black"];
+HGNC -> REACT [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+HGNC -> SwissProt [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+HGNC -> owl [label=<rdf:type (0)>, color="black"];
+IUPHAR -> biolink [label=<biolink:category (0)>, color="black"];
+IUPHAR -> owl [label=<rdf:type (0)>, color="black"];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence (2)>, color="black"];
+MONARCH -> HGNC [label=<OBAN:association_has_subject ! association has subject (2)>, color="black"];
+MONARCH -> OBAN [label=<rdf:type (2)>, color="black"];
+MONARCH -> OMIM [label=<OBAN:association_has_subject ! association has subject (0)>, color="black"];
+MONARCH -> ORPHA [label=<OBAN:association_has_object ! association has object (2)>, color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (2)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+OMIM -> ORPHA [label=<RO:0004013 ! is causal germline mutation in (0)>, color="black"];
+OMIM -> biolink [label=<biolink:category (0)>, color="black"];
+OMIM -> owl [label=<rdf:type (0)>, color="black"];
+ORPHA -> LITERAL [label=<rdfs:label (1)>, color="black"];
+ORPHA -> biolink [label=<biolink:category (1)>, color="black"];
+ORPHA -> owl [label=<rdf:type (1)>, color="black"];
+REACT -> biolink [label=<biolink:category (0)>, color="black"];
+REACT -> owl [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+SwissProt -> biolink [label=<biolink:category (0)>, color="black"];
+SwissProt -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+oboInOwl -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

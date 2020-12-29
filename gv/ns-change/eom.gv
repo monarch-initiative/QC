@@ -1,0 +1,40 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="eom <=> eom"
+EOM -> EOM [label=<foaf:page (0)>, color="black"];
+EOM -> EOM_IMG [label=<foaf:depiction (0)>, color="black"];
+EOM -> HP [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+EOM -> LITERAL [label=<IAO:0000115 ! definition (0)>, color="black"];
+EOM -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym (0)>, color="black"];
+EOM -> LITERAL [label=<oboInOwl:hasRelatedSynonym ! has_related_synonym (0)>, color="black"];
+EOM -> LITERAL [label=<rdfs:comment (0)>, color="black"];
+EOM -> LITERAL [label=<rdfs:label (0)>, color="black"];
+EOM -> biolink [label=<biolink:category (0)>, color="black"];
+EOM -> biolink [label=<rdfs:subClassOf ! subclass_of (0)>, color="black"];
+EOM -> https_elementsofmorphology_nih_gov [label=<foaf:depiction (0)>, color="black"];
+EOM -> owl [label=<rdf:type (0)>, color="black"];
+HP -> owl [label=<rdf:type (0)>, color="black"];
+IAO -> owl [label=<rdf:type (0)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+foaf -> owl [label=<rdf:type (0)>, color="black"];
+oboInOwl -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

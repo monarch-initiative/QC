@@ -1,0 +1,46 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="omim <=> omim"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+OMIM -> OMIM [label=<foaf:page >, penwidth = "1.78414", weight = "81", color="black"];
+OMIM -> LITERAL [label=<dc:description >, penwidth = "2.44493", weight = "111", color="black"];
+MONARCH -> OMIM [label=<OBAN:association_has_subject ! association has subject >, penwidth = "0.352423", weight = "16", color="black"];
+BNODE -> faldo [label=<rdf:type >, penwidth = "0.550661", weight = "25", color="black"];
+PMID -> IAO [label=<rdf:type >, penwidth = "2.64317", weight = "120", color="black"];
+OMIM -> PMID [label=<IAO:0000142 ! mentions >, penwidth = "5", weight = "227", color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate >, penwidth = "0.330396", weight = "15", color="black"];
+MONARCH -> OBAN [label=<rdf:type >, penwidth = "0.330396", weight = "15", color="black"];
+PMID -> OMIM [label=<IAO:0000136 ! is_about >, penwidth = "2.29075", weight = "104", color="black"];
+BNODE -> MONARCH [label=<faldo:reference >, penwidth = "0.352423", weight = "16", color="black"];
+BNODE -> LITERAL [label=<faldo:position >, penwidth = "0.352423", weight = "16", color="black"];
+OMIM -> GENO [label=<rdf:type >, penwidth = "1.78414", weight = "81", color="black"];
+dbSNP -> owl [label=<rdf:type >, penwidth = "0.903084", weight = "41", color="black"];
+OMIM -> biolink [label=<biolink:category >, penwidth = "0.572687", weight = "26", color="black"];
+OMIM -> owl [label=<rdf:type >, penwidth = "0.572687", weight = "26", color="black"];
+OMIM -> OMIM [label=<RO:0003303 ! causes condition >, penwidth = "0.30837", weight = "14", color="black"];
+OMIM -> LITERAL [label=<oboInOwl:hasRelatedSynonym ! has_related_synonym >, penwidth = "1.5859", weight = "72", color="black"];
+BNODE -> IAO [label=<rdf:type >, penwidth = "0.374449", weight = "17", color="black"];
+OMIM -> dbSNP [label=<owl:sameAs ! same_as >, penwidth = "0.92511", weight = "42", color="black"];
+OMIM -> OMIM [label=<GENO:0000408 ! is_allele_of >, penwidth = "1.78414", weight = "81", color="black"];
+OMIM -> ClinVar [label=<oboInOwl:hasDbXref ! database_cross_reference >, penwidth = "3.32599", weight = "151", color="black"];
+OMIM -> LITERAL [label=<rdfs:label >, penwidth = "2.35683", weight = "107", color="black"];
+MONARCH -> OMIM [label=<OBAN:association_has_object ! association has object >, penwidth = "0.330396", weight = "15", color="black"];
+OMIM -> BNODE [label=<IAO:0000142 ! mentions >, penwidth = "0.374449", weight = "17", color="black"];
+BNODE -> LITERAL [label=<rdfs:label >, penwidth = "0.92511", weight = "42", color="black"];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence >, penwidth = "0.330396", weight = "15", color="black"];
+BNODE -> LITERAL [label=<dc:title >, penwidth = "0.374449", weight = "17", color="black"];
+OMIM -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym >, penwidth = "0.572687", weight = "26", color="black"];
+}

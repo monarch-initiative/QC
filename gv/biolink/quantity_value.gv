@@ -1,0 +1,34 @@
+digraph {
+	graph [bb="0,0,299.1,123"];
+	node [label="\N"];
+	"quantity value"	 [height=0.5,
+		label="quantity value",
+		pos="141.1,105",
+		width=1.6971];
+	annotation	 [height=0.5,
+		pos="48.096,18",
+		width=1.336];
+	"quantity value" -> annotation	 [label=is_a,
+		lp="112.1,61.5",
+		pos="e,66.115,34.857 122.72,87.812 108.75,74.739 89.345,56.588 73.827,42.071"];
+	"has unit"	 [color=blue,
+		height=0.5,
+		label=unit,
+		pos="141.1,18",
+		width=0.75];
+	"quantity value" -> "has unit"	 [color=blue,
+		label="has unit",
+		lp="162.6,61.5",
+		pos="e,141.1,36.003 141.1,86.974 141.1,75.192 141.1,59.561 141.1,46.158",
+		style=solid];
+	"has numeric value"	 [color=blue,
+		height=0.5,
+		label=double,
+		pos="220.1,18",
+		width=0.95686];
+	"quantity value" -> "has numeric value"	 [color=blue,
+		label="has numeric value",
+		lp="249.1,61.5",
+		pos="e,211.12,35.601 166.41,88.214 173.87,82.606 181.73,75.991 188.1,69 194.82,61.622 200.97,52.655 206.05,44.309",
+		style=solid];
+}

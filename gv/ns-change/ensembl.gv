@@ -1,0 +1,42 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="ensembl <=> ensembl"
+ENSEMBL -> ENSEMBL [label=<RO:0002205 ! has gene product (1644)>, color="black"];
+ENSEMBL -> HGNC [label=<owl:equivalentClass ! equivalent_class (23)>, color="black"];
+ENSEMBL -> LITERAL [label=<dc:description (29)>, color="black"];
+ENSEMBL -> LITERAL [label=<rdfs:label (-7)>, color="pink"];
+ENSEMBL -> NCBIGene [label=<oboInOwl:hasDbXref ! database_cross_reference (-384)>, color="pink"];
+ENSEMBL -> NCBIGene [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+ENSEMBL -> NCBITaxon [label=<RO:0002162 ! in taxon (12)>, color="black"];
+ENSEMBL -> SO [label=<rdf:type (1644)>, color="black"];
+ENSEMBL -> SO [label=<rdfs:subClassOf ! subclass_of (12)>, color="black"];
+ENSEMBL -> UniProtKB [label=<RO:0002205 ! has gene product (-6)>, color="pink"];
+ENSEMBL -> UniProtKB [label=<oboInOwl:hasDbXref ! database_cross_reference (-121)>, color="pink"];
+ENSEMBL -> biolink [label=<biolink:category (12)>, color="black"];
+ENSEMBL -> owl [label=<rdf:type (12)>, color="black"];
+HGNC -> biolink [label=<biolink:category (6)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+NCBIGene -> biolink [label=<biolink:category (-8)>, color="pink"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+UniProtKB -> SO [label=<rdf:type (-8)>, color="pink"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+oboInOwl -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

@@ -1,0 +1,28 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="ensembl <=> ensembl"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+ENSEMBL -> SO [label=<rdfs:subClassOf ! subclass_of >, penwidth = "0.0364964", weight = "12", color="black"];
+ENSEMBL -> biolink [label=<biolink:category >, penwidth = "0.0364964", weight = "12", color="black"];
+ENSEMBL -> HGNC [label=<owl:equivalentClass ! equivalent_class >, penwidth = "0.0699513", weight = "23", color="black"];
+ENSEMBL -> UniProtKB [label=<oboInOwl:hasDbXref ! database_cross_reference >, penwidth = "0.368005", weight = "121", color="pink"];
+ENSEMBL -> LITERAL [label=<dc:description >, penwidth = "0.0881995", weight = "29", color="black"];
+ENSEMBL -> owl [label=<rdf:type >, penwidth = "0.0364964", weight = "12", color="black"];
+ENSEMBL -> NCBIGene [label=<oboInOwl:hasDbXref ! database_cross_reference >, penwidth = "1.16788", weight = "384", color="pink"];
+ENSEMBL -> NCBITaxon [label=<RO:0002162 ! in taxon >, penwidth = "0.0364964", weight = "12", color="black"];
+ENSEMBL -> SO [label=<rdf:type >, penwidth = "5", weight = "1644", color="black"];
+ENSEMBL -> ENSEMBL [label=<RO:0002205 ! has gene product >, penwidth = "5", weight = "1644", color="black"];
+}

@@ -1,0 +1,56 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="mmrrc <=> mmrrc"
+BNODE -> BNODE [label=<GENO:0000382 ! has_variant_part (18)>, color="black"];
+BNODE -> BNODE [label=<GENO:0000385 ! has_reference_part (16)>, color="black"];
+BNODE -> GENO [label=<GENO:0000608 ! has_zygosity (7)>, color="black"];
+BNODE -> GENO [label=<rdf:type (40)>, color="black"];
+BNODE -> LITERAL [label=<dc:description (16)>, color="black"];
+BNODE -> LITERAL [label=<rdfs:label (40)>, color="black"];
+BNODE -> MGI [label=<GENO:0000382 ! has_variant_part (6)>, color="black"];
+BNODE -> MGI [label=<GENO:0000408 ! is_allele_of (1)>, color="black"];
+BNODE -> NCBITaxon [label=<RO:0002162 ! in taxon (16)>, color="black"];
+GENO -> owl [label=<rdf:type (0)>, color="black"];
+MGI -> GENO [label=<rdf:type (4)>, color="black"];
+MGI -> LITERAL [label=<rdfs:label (7)>, color="black"];
+MGI -> MGI [label=<GENO:0000408 ! is_allele_of (8)>, color="black"];
+MGI -> MP [label=<RO:0002200 ! has phenotype (-1)>, color="pink"];
+MGI -> SO [label=<rdfs:subClassOf ! subclass_of (1)>, color="black"];
+MGI -> owl [label=<rdf:type (1)>, color="black"];
+MMRRC -> BNODE [label=<GENO:0000222 ! has_genotype (16)>, color="black"];
+MMRRC -> CL [label=<rdf:type (-1)>, color="pink"];
+MMRRC -> LITERAL [label=<MONARCH:cliqueLeader ! clique_leader (14)>, color="black"];
+MMRRC -> LITERAL [label=<dc:description (7)>, color="black"];
+MMRRC -> LITERAL [label=<rdfs:label (14)>, color="black"];
+MMRRC -> NCBITaxon [label=<rdf:type (15)>, color="black"];
+MONARCH -> MGI [label=<OBAN:association_has_subject ! association has subject (-1)>, color="pink"];
+MONARCH -> MP [label=<OBAN:association_has_object ! association has object (-1)>, color="pink"];
+MONARCH -> OBAN [label=<rdf:type (-1)>, color="pink"];
+MONARCH -> PMID [label=<dc:source ! Source (-1)>, color="pink"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (-1)>, color="pink"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MP -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+NCBITaxon -> owl [label=<rdf:type (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+PMID -> IAO [label=<rdf:type (4)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

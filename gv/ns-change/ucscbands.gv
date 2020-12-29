@@ -1,0 +1,69 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="ucscbands <=> ucscbands"
+BFO -> owl [label=<rdf:type (0)>, color="black"];
+BNODE -> LITERAL [label=<faldo:position (0)>, color="black"];
+BNODE -> LITERAL [label=<rdfs:label (0)>, color="black"];
+BNODE -> MONARCH [label=<faldo:reference (0)>, color="black"];
+BNODE -> faldo [label=<rdf:type (0)>, color="black"];
+CHR -> GENO [label=<rdfs:subClassOf ! subclass_of (0)>, color="black"];
+CHR -> LITERAL [label=<rdfs:label (0)>, color="black"];
+CHR -> SO [label=<rdfs:subClassOf ! subclass_of (0)>, color="black"];
+CHR -> owl [label=<rdf:type (0)>, color="black"];
+MONARCH -> BNODE [label=<faldo:begin (0)>, color="black"];
+MONARCH -> BNODE [label=<faldo:end (0)>, color="black"];
+MONARCH -> CHR [label=<rdf:type (0)>, color="black"];
+MONARCH -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym (0)>, color="black"];
+MONARCH -> LITERAL [label=<rdfs:label (0)>, color="black"];
+MONARCH -> SO [label=<rdf:type (0)>, color="black"];
+MONARCH -> UCSC [label=<RO:0002350 ! member of (0)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+NCBIAssembly -> LITERAL [label=<dc:description (0)>, color="black"];
+NCBIAssembly -> LITERAL [label=<rdf:type (0)>, color="black"];
+NCBIAssembly -> LITERAL [label=<rdfs:label (0)>, color="black"];
+NCBIAssembly -> NCBITaxon [label=<RO:0002162 ! in taxon (0)>, color="black"];
+NCBIAssembly -> SO [label=<rdf:type (0)>, color="black"];
+NCBIAssembly -> biolink [label=<biolink:category (0)>, color="black"];
+NCBIGenome -> LITERAL [label=<dc:description (0)>, color="black"];
+NCBIGenome -> LITERAL [label=<rdf:type (0)>, color="black"];
+NCBIGenome -> LITERAL [label=<rdfs:label (0)>, color="black"];
+NCBIGenome -> NCBITaxon [label=<RO:0002162 ! in taxon (0)>, color="black"];
+NCBIGenome -> SO [label=<rdf:type (0)>, color="black"];
+NCBIGenome -> biolink [label=<biolink:category (0)>, color="black"];
+NCBITaxon -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym (0)>, color="black"];
+NCBITaxon -> owl [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+UCSC -> LITERAL [label=<dc:description (0)>, color="black"];
+UCSC -> LITERAL [label=<rdf:type (0)>, color="black"];
+UCSC -> LITERAL [label=<rdfs:label (0)>, color="black"];
+UCSC -> MONARCH [label=<BFO:0000051 ! has_part (0)>, color="black"];
+UCSC -> MONARCH [label=<RO:0002351 ! has member (0)>, color="black"];
+UCSC -> NCBIAssembly [label=<owl:sameAs ! same_as (0)>, color="black"];
+UCSC -> NCBIGenome [label=<owl:sameAs ! same_as (0)>, color="black"];
+UCSC -> NCBITaxon [label=<RO:0002162 ! in taxon (0)>, color="black"];
+UCSC -> SO [label=<rdf:type (0)>, color="black"];
+UCSC -> SO [label=<rdfs:subClassOf ! subclass_of (0)>, color="black"];
+UCSC -> biolink [label=<biolink:category (0)>, color="black"];
+UCSC -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+faldo -> owl [label=<rdf:type (0)>, color="black"];
+oboInOwl -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

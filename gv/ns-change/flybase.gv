@@ -1,0 +1,54 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="flybase <=> flybase"
+FlyBase -> DOID [label=<RO:0003301 ! is model of (0)>, color="black"];
+FlyBase -> FBcv [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+FlyBase -> FlyBase [label=<GENO:0000418 ! has_affected_feature (0)>, color="black"];
+FlyBase -> GENO [label=<rdf:type (0)>, color="black"];
+FlyBase -> HGNC [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+FlyBase -> IAO [label=<rdf:type (0)>, color="black"];
+FlyBase -> LITERAL [label=<dc:title (0)>, color="black"];
+FlyBase -> LITERAL [label=<rdfs:label (0)>, color="black"];
+FlyBase -> NCBIGene [label=<owl:equivalentClass ! equivalent_class (0)>, color="black"];
+FlyBase -> NCBITaxon [label=<RO:0002162 ! in taxon (0)>, color="black"];
+FlyBase -> SO [label=<rdfs:subClassOf ! subclass_of (0)>, color="black"];
+FlyBase -> owl [label=<rdf:type (0)>, color="black"];
+GENO -> owl [label=<rdf:type (0)>, color="black"];
+HGNC -> biolink [label=<biolink:category (0)>, color="black"];
+MONARCH -> DOID [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> FBcv [label=<GENO:0000580 ! has_qualifier (0)>, color="black"];
+MONARCH -> FBcv [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> FBdv [label=<GENO:0000580 ! has_qualifier (0)>, color="black"];
+MONARCH -> FlyBase [label=<GENO:0000580 ! has_qualifier (0)>, color="black"];
+MONARCH -> FlyBase [label=<OBAN:association_has_subject ! association has subject (0)>, color="black"];
+MONARCH -> FlyBase [label=<dc:source ! Source (0)>, color="black"];
+MONARCH -> GO [label=<GENO:0000580 ! has_qualifier (0)>, color="black"];
+MONARCH -> LITERAL [label=<dc:description (0)>, color="black"];
+MONARCH -> OBAN [label=<rdf:type (0)>, color="black"];
+MONARCH -> PMID [label=<dc:source ! Source (0)>, color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (0)>, color="black"];
+MONARCH -> SO [label=<GENO:0000580 ! has_qualifier (0)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+NCBIGene -> biolink [label=<biolink:category (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

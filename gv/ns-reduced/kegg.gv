@@ -1,0 +1,31 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="kegg <=> kegg"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+PMID -> KEGG_path [label=<IAO:0000136 ! is_about >, penwidth = "0.139535", weight = "36", color="black"];
+KEGG_ko -> LITERAL [label=<rdfs:label >, penwidth = "0.0581395", weight = "15", color="black"];
+PMID -> IAO [label=<rdf:type >, penwidth = "0.139535", weight = "36", color="black"];
+KEGG_ko -> EC [label=<oboInOwl:hasDbXref ! database_cross_reference >, penwidth = "0.0542636", weight = "14", color="black"];
+KEGG_ko -> BNODE [label=<RO:0002205 ! has gene product >, penwidth = "0.0697674", weight = "18", color="black"];
+KEGG_ko -> owl [label=<rdf:type >, penwidth = "0.0581395", weight = "15", color="black"];
+KEGG_ko -> LITERAL [label=<dc:description >, penwidth = "0.0581395", weight = "15", color="black"];
+BNODE -> CHEBI [label=<rdf:type >, penwidth = "0.0697674", weight = "18", color="black"];
+KEGG_ko -> EDAM_DATA [label=<rdfs:subClassOf ! subclass_of >, penwidth = "0.0581395", weight = "15", color="black"];
+BNODE -> KEGG_path [label=<rdfs:label >, penwidth = "5", weight = "1290", color="black"];
+KEGG_ko -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym >, penwidth = "0.139535", weight = "36", color="black"];
+KEGG_hsa -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym >, penwidth = "0.616279", weight = "159", color="black"];
+BNODE -> KEGG_path [label=<RO:0002331 ! involved in >, penwidth = "5", weight = "1290", color="black"];
+}

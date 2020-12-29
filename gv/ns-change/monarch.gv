@@ -1,0 +1,51 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="monarch <=> monarch"
+MONARCH -> CL [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> GO [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> HP [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> LITERAL [label=<dc:description (0)>, color="black"];
+MONARCH -> LITERAL [label=<rdfs:comment (0)>, color="black"];
+MONARCH -> MP [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> MPATH [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> NBO [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> OBA [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> OBAN [label=<rdf:type (0)>, color="black"];
+MONARCH -> OMIA [label=<OBAN:association_has_subject ! association has subject (0)>, color="black"];
+MONARCH -> OMIA [label=<dc:source ! Source (0)>, color="black"];
+MONARCH -> PMID [label=<dc:source ! Source (0)>, color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (0)>, color="black"];
+MONARCH -> UBERON [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> VT [label=<OBAN:association_has_object ! association has object (0)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+OMIA -> CL [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+OMIA -> GO [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+OMIA -> HP [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+OMIA -> MP [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+OMIA -> MPATH [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+OMIA -> NBO [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+OMIA -> OBA [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+OMIA -> UBERON [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+OMIA -> VT [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

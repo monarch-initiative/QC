@@ -1,0 +1,75 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="coriell <=> coriell"
+BNODE -> BNODE [label=<GENO:0000222 ! has_genotype (4)>, color="black"];
+BNODE -> BNODE [label=<GENO:0000382 ! has_variant_part (4)>, color="black"];
+BNODE -> BNODE [label=<GENO:0000385 ! has_reference_part (0)>, color="black"];
+BNODE -> BNODE [label=<faldo:begin (0)>, color="black"];
+BNODE -> BNODE [label=<faldo:location (0)>, color="black"];
+BNODE -> CHR [label=<faldo:reference (0)>, color="black"];
+BNODE -> CoriellFamily [label=<RO:0002350 ! member of (12)>, color="black"];
+BNODE -> GENO [label=<GENO:0000608 ! has_zygosity (2)>, color="black"];
+BNODE -> GENO [label=<rdf:type (14)>, color="black"];
+BNODE -> LITERAL [label=<rdfs:label (22)>, color="black"];
+BNODE -> NCBITaxon [label=<RO:0002162 ! in taxon (13)>, color="black"];
+BNODE -> OMIM [label=<GENO:0000382 ! has_variant_part (2)>, color="black"];
+BNODE -> OMIM [label=<RO:0002200 ! has phenotype (10)>, color="black"];
+BNODE -> SO [label=<rdf:type (0)>, color="black"];
+BNODE -> dbSNPIndividual [label=<GENO:0000222 ! has_genotype (0)>, color="black"];
+BNODE -> faldo [label=<rdf:type (0)>, color="black"];
+BNODE -> foaf [label=<rdf:type (13)>, color="black"];
+Coriell -> BNODE [label=<RO:0001000 ! derives_from (13)>, color="black"];
+Coriell -> CL [label=<RO:0001000 ! derives_from (13)>, color="black"];
+Coriell -> CLO [label=<RO:0001000 ! derives_from (0)>, color="black"];
+Coriell -> CLO [label=<rdf:type (10)>, color="black"];
+Coriell -> Coriell [label=<owl:sameAs ! same_as (-3)>, color="pink"];
+Coriell -> LITERAL [label=<dc:description (12)>, color="black"];
+Coriell -> LITERAL [label=<rdfs:label (13)>, color="black"];
+Coriell -> OMIM [label=<RO:0003301 ! is model of (10)>, color="black"];
+CoriellCollection -> Coriell [label=<RO:0002351 ! has member (13)>, color="black"];
+CoriellCollection -> CoriellCollection [label=<foaf:page (0)>, color="black"];
+CoriellCollection -> ERO [label=<rdf:type (0)>, color="black"];
+CoriellCollection -> LITERAL [label=<rdfs:label (0)>, color="black"];
+CoriellFamily -> LITERAL [label=<rdfs:label (6)>, color="black"];
+CoriellFamily -> PCO [label=<rdf:type (5)>, color="black"];
+CoriellFamily -> biolink [label=<biolink:category (5)>, color="black"];
+GENO -> owl [label=<rdf:type (0)>, color="black"];
+IAO -> owl [label=<rdf:type (0)>, color="black"];
+MONARCH -> BNODE [label=<OBAN:association_has_subject ! association has subject (10)>, color="black"];
+MONARCH -> OBAN [label=<rdf:type (10)>, color="black"];
+MONARCH -> OMIM [label=<OBAN:association_has_object ! association has object (10)>, color="black"];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (10)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchArchive -> owl [label=<rdf:type (0)>, color="black"];
+OBAN -> owl [label=<rdf:type (0)>, color="black"];
+OMIM -> SO [label=<rdf:type (2)>, color="black"];
+OMIM -> owl [label=<rdf:type (1)>, color="black"];
+PMID -> Coriell [label=<IAO:0000142 ! mentions (0)>, color="black"];
+PMID -> IAO [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+dbSNPIndividual -> BNODE [label=<GENO:0000382 ! has_variant_part (0)>, color="black"];
+dbSNPIndividual -> BNODE [label=<GENO:0000385 ! has_reference_part (0)>, color="black"];
+dbSNPIndividual -> GENO [label=<rdf:type (0)>, color="black"];
+dbSNPIndividual -> LITERAL [label=<rdfs:label (0)>, color="black"];
+dbSNPIndividual -> NCBITaxon [label=<RO:0002162 ! in taxon (0)>, color="black"];
+dc -> owl [label=<rdf:type (0)>, color="black"];
+faldo -> owl [label=<rdf:type (0)>, color="black"];
+foaf -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

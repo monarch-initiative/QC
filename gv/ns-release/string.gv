@@ -1,0 +1,15 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+ENSEMBL -> ENSEMBL [label=<RO:0002434 ! interacts with (305485)>];
+ENSEMBL -> SO [label=<rdf:type (14699)>];
+MONARCH -> owl [label=<rdf:type (2)>];
+MonarchArchive -> owl [label=<rdf:type (1)>];
+NCBIGene -> NCBIGene [label=<RO:0002434 ! interacts with (1266246)>];
+NCBIGene -> SO [label=<rdf:type (63308)>];
+RO -> owl [label=<rdf:type (1)>];
+dc -> owl [label=<rdf:type (1)>];
+LITERAL [shape=record];
+labelloc="t";
+label="string (20201221)";
+}

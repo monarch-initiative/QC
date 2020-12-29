@@ -1,0 +1,41 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="udp <=> udp"
+BNODE -> BNODE [label=<GENO:0000382 ! has_variant_part (0)>, color="black"];
+BNODE -> FlyBase [label=<GENO:0000418 ! has_affected_feature (0)>, color="black"];
+BNODE -> GENO [label=<rdf:type (0)>, color="black"];
+BNODE -> LITERAL [label=<rdfs:label (0)>, color="black"];
+BNODE -> NCBIGene [label=<GENO:0000418 ! has_affected_feature (0)>, color="black"];
+BNODE -> NCBITaxon [label=<RO:0002162 ! in taxon (0)>, color="black"];
+BNODE -> SO [label=<rdf:type (0)>, color="black"];
+BNODE -> dbSNP [label=<owl:sameAs ! same_as (0)>, color="black"];
+GENO -> owl [label=<rdf:type (0)>, color="black"];
+MONARCH -> BNODE [label=<GENO:0000222 ! has_genotype (0)>, color="black"];
+MONARCH -> DOID [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+MONARCH -> HP [label=<RO:0002200 ! has phenotype (0)>, color="black"];
+MONARCH -> LITERAL [label=<rdfs:label (0)>, color="black"];
+MONARCH -> foaf [label=<rdf:type (0)>, color="black"];
+MONARCH -> owl [label=<rdf:type (0)>, color="black"];
+MonarchData -> LITERAL [label=<owl:versionInfo ! version_info (0)>, color="black"];
+MonarchData -> MonarchArchive [label=<owl:versionIRI ! version_iri (0)>, color="black"];
+MonarchData -> owl [label=<rdf:type (0)>, color="black"];
+RO -> owl [label=<rdf:type (0)>, color="black"];
+http_purl_org_dc_elements_1_1_source -> owl [label=<rdf:type (0)>, color="black"];
+rdfs -> owl [label=<rdf:type (0)>, color="black"];
+
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+}
+

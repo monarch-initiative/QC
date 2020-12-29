@@ -1,0 +1,28 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="coriell <=> coriell"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+BNODE -> foaf [label=<rdf:type >, penwidth = "2.95455", weight = "13", color="black"];
+BNODE -> NCBITaxon [label=<RO:0002162 ! in taxon >, penwidth = "2.95455", weight = "13", color="black"];
+Coriell -> CL [label=<RO:0001000 ! derives_from >, penwidth = "2.95455", weight = "13", color="black"];
+CoriellCollection -> Coriell [label=<RO:0002351 ! has member >, penwidth = "2.95455", weight = "13", color="black"];
+Coriell -> LITERAL [label=<dc:description >, penwidth = "2.72727", weight = "12", color="black"];
+Coriell -> BNODE [label=<RO:0001000 ! derives_from >, penwidth = "2.95455", weight = "13", color="black"];
+Coriell -> LITERAL [label=<rdfs:label >, penwidth = "2.95455", weight = "13", color="black"];
+BNODE -> GENO [label=<rdf:type >, penwidth = "3.18182", weight = "14", color="black"];
+BNODE -> LITERAL [label=<rdfs:label >, penwidth = "5", weight = "22", color="black"];
+BNODE -> CoriellFamily [label=<RO:0002350 ! member of >, penwidth = "2.72727", weight = "12", color="black"];
+}

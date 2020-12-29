@@ -1,0 +1,21 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="hgnc <=> hgnc"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+PMID -> HGNC [label=<IAO:0000136 ! is_about >, penwidth = "5", weight = "12", color="black"];
+HGNC -> OMIM [label=<owl:equivalentClass ! equivalent_class >, penwidth = "4.58333", weight = "11", color="black"];
+HGNC -> NCBIGene [label=<owl:equivalentClass ! equivalent_class >, penwidth = "4.58333", weight = "11", color="black"];
+}

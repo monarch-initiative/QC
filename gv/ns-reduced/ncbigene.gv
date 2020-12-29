@@ -1,0 +1,25 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="ncbigene <=> ncbigene"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+PMID -> NCBIGene [label=<IAO:0000136 ! is_about >, penwidth = "5", weight = "12165", color="black"];
+PMID -> IAO [label=<rdf:type >, penwidth = "1.77764", weight = "4325", color="black"];
+NCBIGene -> ENSEMBL [label=<oboInOwl:hasDbXref ! database_cross_reference >, penwidth = "0.0727497", weight = "177", color="black"];
+NCBIGene -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym >, penwidth = "0.0998767", weight = "243", color="black"];
+NCBIGene -> VGNC [label=<owl:equivalentClass ! equivalent_class >, penwidth = "0.0887793", weight = "216", color="black"];
+PMID -> owl [label=<rdf:type >, penwidth = "1.77764", weight = "4325", color="black"];
+NCBIGene -> LITERAL [label=<oboInOwl:hasRelatedSynonym ! has_related_synonym >, penwidth = "0.514591", weight = "1252", color="black"];
+}

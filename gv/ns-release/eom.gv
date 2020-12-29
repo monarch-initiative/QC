@@ -1,0 +1,27 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+EOM -> LITERAL [label=<IAO:0000115 ! definition (400)>];
+EOM -> biolink [label=<biolink:category (400)>];
+EOM -> EOM_IMG [label=<foaf:depiction (756)>];
+EOM -> https_elementsofmorphology_nih_gov [label=<foaf:depiction (22)>];
+EOM -> EOM [label=<foaf:page (400)>];
+EOM -> LITERAL [label=<oboInOwl:hasExactSynonym ! has_exact_synonym (181)>];
+EOM -> LITERAL [label=<oboInOwl:hasRelatedSynonym ! has_related_synonym (210)>];
+EOM -> HP [label=<owl:equivalentClass ! equivalent_class (400)>];
+EOM -> owl [label=<rdf:type (400)>];
+EOM -> LITERAL [label=<rdfs:comment (367)>];
+EOM -> LITERAL [label=<rdfs:label (400)>];
+EOM -> biolink [label=<rdfs:subClassOf ! subclass_of (400)>];
+HP -> owl [label=<rdf:type (394)>];
+IAO -> owl [label=<rdf:type (1)>];
+MONARCH -> owl [label=<rdf:type (2)>];
+MonarchArchive -> owl [label=<rdf:type (1)>];
+dc -> owl [label=<rdf:type (1)>];
+foaf -> owl [label=<rdf:type (1)>];
+oboInOwl -> owl [label=<rdf:type (2)>];
+rdfs -> owl [label=<rdf:type (2)>];
+LITERAL [shape=record];
+labelloc="t";
+label="eom (20201221)";
+}

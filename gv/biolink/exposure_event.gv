@@ -1,0 +1,18 @@
+digraph {
+	graph [bb="0,0,127.39,123"];
+	node [label="\N"];
+	"exposure event"	 [height=0.5,
+		label="exposure event",
+		pos="63.694,105",
+		width=1.7693];
+	timepoint	 [color=blue,
+		height=0.5,
+		label="time type",
+		pos="63.694,18",
+		width=1.2277];
+	"exposure event" -> timepoint	 [color=blue,
+		label=timepoint,
+		lp="90.194,61.5",
+		pos="e,63.694,36.003 63.694,86.974 63.694,75.192 63.694,59.561 63.694,46.158",
+		style=solid];
+}

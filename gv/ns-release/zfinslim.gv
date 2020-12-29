@@ -1,0 +1,21 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+MONARCH -> ZP [label=<OBAN:association_has_object ! association has object (69738)>];
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate (69738)>];
+MONARCH -> ZFIN [label=<OBAN:association_has_subject ! association has subject (69738)>];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence (69738)>];
+MONARCH -> ZFIN [label=<dc:source ! Source (73381)>];
+MONARCH -> OBAN [label=<rdf:type (69738)>];
+MONARCH -> owl [label=<rdf:type (2)>];
+MonarchArchive -> owl [label=<rdf:type (1)>];
+OBAN -> owl [label=<rdf:type (3)>];
+RO -> owl [label=<rdf:type (2)>];
+ZFIN -> LITERAL [label=<MONARCH:cliqueLeader ! clique_leader (6834)>];
+ZFIN -> ZP [label=<RO:0002200 ! has phenotype (69738)>];
+ZFIN -> IAO [label=<rdf:type (5771)>];
+dc -> owl [label=<rdf:type (1)>];
+LITERAL [shape=record];
+labelloc="t";
+label="zfinslim (20201221)";
+}

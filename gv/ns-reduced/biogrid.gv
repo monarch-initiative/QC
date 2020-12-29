@@ -1,0 +1,26 @@
+digraph {
+rankdir=LR;
+charset="utf-8";
+LITERAL [shape=record];
+labelloc="t";
+label="biogrid <=> biogrid"
+	node[shape=plaintext];
+	subgraph cluster_key{rank=max;label="Color Legend";
+	dflt [label=< <font color="black">Typical Case</font> >];
+	gain [label=< <font color="blue">New Edge</font> >];
+	drop [label=< <font color="orange">Lost Edge</font> >];
+	less [label=< <font color="pink">Diminished Count</font> >];
+	dflt -> dflt [color="black"];
+	gain -> gain [color="blue"];
+	drop -> drop [color="orange"];
+	less -> less [color="pink"];
+	}
+MONARCH -> RO [label=<OBAN:association_has_predicate ! association has predicate >, penwidth = "4.50676", weight = "3399", color="black"];
+MONARCH -> OBAN [label=<rdf:type >, penwidth = "4.50676", weight = "3399", color="black"];
+MONARCH -> NCBIGene [label=<OBAN:association_has_object ! association has object >, penwidth = "4.50676", weight = "3399", color="black"];
+MONARCH -> NCBIGene [label=<OBAN:association_has_subject ! association has subject >, penwidth = "4.50676", weight = "3399", color="black"];
+NCBIGene -> NCBIGene [label=<RO:0002435 ! genetically interacts with >, penwidth = "0.432246", weight = "326", color="black"];
+NCBIGene -> NCBIGene [label=<RO:0002434 ! interacts with >, penwidth = "4.06656", weight = "3067", color="black"];
+MONARCH -> PMID [label=<dc:source ! Source >, penwidth = "5", weight = "3771", color="black"];
+MONARCH -> ECO [label=<RO:0002558 ! has evidence >, penwidth = "4.66985", weight = "3522", color="black"];
+}
