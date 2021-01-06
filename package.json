@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@hpcc-js/wasm": "^0.3.14",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
     "d3": "^5.15.0",
