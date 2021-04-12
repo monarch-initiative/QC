@@ -37,10 +37,6 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'Dipper',
-        link: '/dipper/',
-      },
-      {
         text: 'SciGraph',
         link: '/scigraph/'
       },
@@ -66,19 +62,6 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/dipper/': [
-        {
-          title: 'Dipper',
-          collapsable: false,
-          children: [
-            ['', 'Introduction'],
-            'namespace-table',
-            'namespace-change',
-            'namespace-reduced',
-            'namespace-release'
-          ]
-        }
-      ],
       '/biolink/': [
         {
           title: 'Biolink Model',

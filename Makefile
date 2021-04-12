@@ -11,12 +11,8 @@ WGET_GV = $(WGET) --accept ".gv" --recursive --no-parent --no-host-directories -
 
 QC_FILES = docs/.vuepress/public/gv/ \
 	docs/.vuepress/public/gv/biolink/ \
-	docs/.vuepress/public/gv/ns-change/ \
-	docs/.vuepress/public/gv/ns-reduced/ \
-	docs/.vuepress/public/gv/ns-release/ \
 	docs/.vuepress/public/md/metadata.md \
 	docs/.vuepress/public/md/scigraph-categories.md \
-	docs/.vuepress/public/md/dipper_diff.md \
 	docs/rules/monarch-rules.md \
 	docs/solr/solr-diff.md
 
@@ -27,9 +23,6 @@ all: $(QC_FILES)
 clean:
 	rm --force --recursive --verbose --preserve-root --one-file-system \
 		docs/.vuepress/public/gv/biolink/ \
-        docs/.vuepress/public/gv/ns-change/ \
-        docs/.vuepress/public/gv/ns-reduced/ \
-        docs/.vuepress/public/gv/ns-release/ \
 		docs/.vuepress/public/gv/ \
 		docs/.vuepress/public/md/metadata.md \
 		docs/.vuepress/public/md/scigraph-categories.md \
